@@ -3,7 +3,7 @@ html {
 	--hovercolor: rgba(211, 211, 211, 0.477);
 	--mouse-x: 0; 
     --mouse-y: 0;
-	--bgfade: rgb(255,calc(var(--mouse-y) * -50 + 250),calc(var(--mouse-x) * -80 + 235));
+	--bgfade: rgb(255,calc(var(--mouse-y) * -50 + 100),calc(var(--mouse-x) * -80 + 235));
 	--fade-width:15px;
 
 }
