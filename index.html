@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Carla Website</title>
+	<link rel="stylesheet" href="style.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <script src="portfolio.js" defer></script> -->
+
+
+<style>
+	@keyframes wiggle {
+	  0%   {margin: 0;}
+		50%  {margin: -10px 15px;}
+	  100% {margin: 13px 11px;}
+		}
+
+	#subject {
+		animation: wiggle 10s infinite alternate;
+	}
+	#ego {
+		animation: wiggle 20s infinite alternate;
+	}
+
+	#trust {
+		animation: wiggle 5s infinite alternate;
+	}
+	#care {
+		animation: wiggle 10s infinite alternate;
+		 }
+</style>
+</head>
+
+<body>
+
+
+	<header>
+		<h1>Carla Website</h1>
+		<details>
+			<summary>is</summary>
+				<ul>
+					<li>artistic researcher</li>
+					<li>educator</li>
+					<li>Rotterdam-based</li>
+					<li>philosophy and design graduate</li>
+					<li>Gijs de Boer (1992, NL)</li>
+				</ul>
+		</details>
+		<details>
+			<summary>studies</summary>
+			<ul>
+				<li>relational self-models</li>
+				<li>inherited modernist desires</li>
+				<li>the role of aesthetics and materiality</li>
+				<li>trust, care, and tech relations</li>
+				<li>criticality while complicit</li>
+				<li>artistic research methods</li>
+			</ul>
+		</details>
+		<details>
+			<summary>makes</summary>
+				<ul>
+					<li>websites</li>
+					<li>essays</li>
+					<li>videos</li>
+					<li>compasses</li>
+					<li>installations</li>
+					<li>workshops</li>
+					<li>?</li>
+				</ul>
+		</details>
+		<details>
+			<summary>searches</summary>
+			<ul>
+				<li>a hybrid artistic-academic PhD
+				<br>to do a project on self-technologies called <em>Subject Matter</em></li>
+				<li>a suiting academic field to situate it
+				<br>see <a href="subject-matter.html" target="_blank">this website</a> for more info.</li>
+			</ul>			
+				
+		</details>
+		<details>
+			<summary>@</summary>
+			<ul>
+				<li><button id="copy-btn" onclick="copyEmail()">copy my email</button></li>
+				<!-- <li><a href="mailto:info@supergijs.com">email</a></li> -->
+			</ul>
+		</details>
+		
+		<!-- <a id="portfoliolink" href="#portfolio">> list of works</a> -->
+	</header>
+
+<div id="sky">
+
+	<div id="crosshair-h" class="hair"></div>
+  	<div id="crosshair-v" class="hair"></div>
+    <div class="label" id="left">
+      <h2>roles</h2>
+    </div>
+    <div class="label" id="right">
+      <h2>aesthetics</h2>
+    </div>
+    <div class="label" id="top">
+      <h2>concepts</h2>
+    </div>
+    <div class="label" id="bottom">
+      <h2>sites</h2>
+    </div>
+
+<!-- WORK -->
+
+<!-- PORTFOLIO TABLE -->
+
+<div id="portfolio">
+	<a class="back" href="#"> </a>
+	<div class="filter">
+		<!-- <div class="fill"></div> -->
+		<button class="filter-btn" data-category="all">All</button>
+		<button class="filter-btn" data-category="trust">Trust Design</button>
+		<button class="filter-btn" data-category="care">Care Tools</button>
+		<button class="filter-btn" data-category="subject">Subject Matter</button>
+		<button class="filter-btn" data-category="hypocrit">hypocrits</button>
+		<!-- <div class="fill"></div> -->
+		<!-- Add more buttons for other categories as needed -->
+  	</div>
+  	<table id="portfolioTable">
+		<thead>
+		<tr>
+			<th>work</th>
+			<th>research stream</th>
+			<th>context</th>
+			<th>year</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr data-category="trust">
+			<td><a href="#atm" class="project-link">Always Trust Me</a></td>
+			<td>Trust Design</td>
+			<td>Design Academy Eindhoven</td>
+			<td>2019</td>
+		</tr>
+		<tr data-category="trust">
+			<td>ATM flag</td>
+			<td>Trust Design</td>
+			<td>Design Academy Eindhoven</td>
+			<td>2019</td>
+		</tr>
+		<!-- Add more rows for other projects with respective categories -->
+		</tbody>
+ 	</table>
+</div>
+
+	<!-- PROJECTS -->
+
+	<a href="2020/index.html" style="left: 2vw; bottom: 2vh; width:50px; color:rgba(0,0,0,0.3);" class="plant">
+		<img src="images/zen.jpg"/>
+		<p style="margin:0; font-size:0.6em;">> old me</p>
+	</a>
+
+	<div class="world" id="ego" style="top: 32vh; left:6vw;">
+	 <h1>Hypocrits</h1>
+	 <p>Exploring the potential of starting from your complicity for deeper and more empathic forms of critical artistic research.</p>
+  </div>
+  	<a href="subject-matter.html" style="text-decoration: none; color: inherit;"><div class="world" id="subject" style="top: 10vh; right:14vw;">
+	 <h1>Subject Matter</h1>
+	 <p>A framework for thinking the influence of the material world on how you understand your role in that context, your subjectivity.</p>
+	</div></a>
+	<div class="world" id="trust" style="bottom: 10vh; left:55vw;">
+	 <h1>Trust Design</h1>
+	 <p>Looking for an honest aesthetic for building trust, which does not shy away from showing you its tactics (aka design).</p>
+	</div>
+	<div class="world" id="care" style="bottom: 5dvh; left: 3dvw;">
+	<h1>Care Technology</h1>
+	<p>What are the material conditions where we grow our care relations with plants, and how can they be based on trust rather than control?</p>
+ 	</div>
+
+
+
+	<a href="#bill" style="right: 3vw; bottom: 23vh;" class="plant">
+		<img src="images/bill.png"/>
+	</a>
+	<div id="bill" class="card">
+		<a class="back" href="#"> </a>
+		<div>
+			<a href="#" title="back" class="card-close">X</a>
+			<h3>trust design</h3>
+			<img src="images/bill.png" class="card-image"/>
+			<h2>An honest bill</h2>
+			<p>All euro notes feature a bridge. Bridges are a common theme on bank notes. Perhaps it is their width - they fit better than a skyscraper - their repetitive geometry - which rhymes with the other line patterns on bills - their accessibility - all parts of society cross them - their permanence - built to sustain - or just their symbolic meaning. The bridges on Euro notes however, are fictional.</p>
+			<p>The fictional bridges aim to capture different architectural style periods: classical, baroque, modern. They are assigned to the bank notes chronologically: the higher the value, the closer to now. Historically quite accurate. Until in 2011, the Dutch town of Spijkenisse built the bridges.</p>
+		</div>
+	</div>
+
+	<a href="#atmflag" style="right: -10px; bottom: 5vh; width:110px;" class="plant">
+		<img src="images/atmflag.png"/>
+	</a>
+	<div id="atmflag" class="card">
+		<a class="back" href="#"> </a>
+		<div>
+			<a href="#" title="back" class="card-close">X</a>
+			<h3>trust design</h3>
+			<img src="images/atmbomb.jpg" class="card-image"/>
+			<h2>ATM flags</h2>
+			<p>If an ATM is designed to look undesigned - like just a machine - could it not be more minimal? How little is necessary to create the consoling illusion of a neutral machine watching over my cash?</p>
+		</div>
+	</div>
+
+	<a href="#atm" style="right: 30vw; bottom:30vh;" class="plant">
+		<img src="images/atm.png"/>
+	</a>
+	<div id="atm" class="card">
+		<a class="back" href="#"> </a>
+		<div> <a href="#" title="back" class="card-close">X</a>
+			<h3>trust design</h3>
+			<img src="images/atms.jpg" class="card-image"/>
+			<h2>Always Trust Me</h2>
+			<p>A series of ATMs with a more honest trust aesthetic, showing their attempt at neutrality. I often trust things that seem designed as if they are undesigned, or neutral. Especially technological things. Yet I feel fooled: I trust them for seeming true, while their look is just a mask, like Out-of-Bed hairgel. Can I trust things when I can see how they are designed to win my trust? To test this, I copied a seemingly neutral ATM incompletely, leaving clues to reveal its modernist mask.</p>
+			<img src="images/atmddw.jpg" class="card-image"/>
+		</div>
+	</div>
+
+	<a href="#shine" style="right: 5vw; top: 30vh;" class="plant">
+		<img src="images/shine.png"/>
+	</a>
+	<div id="shine" class="card">
+		<a class="back" href="#"> </a>
+		<div>
+			<a href="#" title="back" class="card-close">X</a>
+			<h3>trust design</h3>
+			<img src="images/shine.jpg" class="card-image"/>
+			<h2>The Shine of Money</h2>
+			<p>A trend report on the design of trust in the financial world.
+			Why did bank buildings look like temples? Why do we offer our bank card to a dirty machine in an alley at 2am? Why are all fintech apps a shade of blue?</p>
+			<p>The world of finance has been building trust by making use of aesthetics. The way these trust aesthetics have changed over time reflect larger societal developments in what people accept as being trustworthy.</p>
+			<p>I trace back some of these trust aesthetics, analyse their attractions and limitations, and explore an alternative aesthetic of trust that avoids the illusory nature of past tactics.</p>
+			<a href="https://www.academia.edu/44127377/The_Shine_of_Money_A_Trend_Report_on_Trust" target="_blank"><button>Read online</button></a>
+			<a href="/resources/shineofmoney.pdf" download="The Shine of Money"><button>Download PDF</button></a>
+			<img src="images/shine2.jpg" class="card-image"/>
+		</div>
+	</div>
+
+	<a href="#wintrust" style="right: 55vw; top: 52vh;" class="plant">
+		<img src="images/wintrust.jpg"/>
+	</a>
+	<div id="wintrust" class="card">
+		<a class="back" href="#"> </a>
+		<div>
+			<a href="#" title="back" class="card-close">X</a>
+			<h3>trust design</h3>
+			<img src="images/wintrustye.jpg" class="card-image"/>
+			<h2>How to win trust in stormy weather?</h2>
+			<p>A video essay on the design of trust, in the guise of different trust winners. I trace a development from 'Solid Trust' (trust me I'm old) to 'Clean Trust' (trust me I'm neutral), and propose a new paradigm of 'Fluid Trust.' Instead of pretending that things are stable or neutral, could we learn to trust things that show that they are faking?</p>
+			<a href="https://youtu.be/NrCj8tly2Wc?t=266" target="_blank"><button>Watch the essay</button></a>
+			<img src="images/wintrustghost.jpg" class="card-image"/>
+		</div>
+	</div>
+
+	<a href="#fakers" style="left: 52vw; bottom: 5%;" class="plant">
+		<img src="images/fakers.png"/>
+	</a>
+	<div id="fakers" class="card">
+		<a class="back" href="#"> </a>
+		<div>
+			<a href="#" title="back" class="card-close">X</a>
+			<h3>trust design</h3>
+			<img src="images/ye.jpg" class="card-image"/>
+			<h2>Genuine Fakers</h2>
+			<p>A video series on appropriation techniques by appropriating artists who appropriate.</p>
+			<p>How to fake without losing your integrity? There's only one way to learn from masters of appropriation: in a very unofficial collab with Kanye and Demna Gvasalia. Impressed by how their work is able to play with faking while still feeling genuine, I explored ways of being vulnerable. Could I copy their works, Kanye's Bound 2 video and Demna's DHL T-shirt, in a way that feels like a tribute rather than a charade?</p>
+			<img src="images/demna.jpg" class="card-image"/>
+		</div>
+	</div>
+
+	<a href="#egoportraits" style="left: 8vw; top: 22vh; width:80px" class="plant">
+		<img src="images/egoshow.png"/>
+	</a>
+	<div id="egoportraits" class="card">
+		<a class="back" href="#"> </a>
+		<div>
+			<a href="#" title="back" class="card-close">X</a>
+			<h3>hypocrits</h3>
+			<img src="images/egoportraits.jpg" class="card-image"/>
+			<h2>Ego Design</h2>
+			<p>A positioning workshop for critical design students through self-portraiture.</p>
+			<p>One thing that a graduation project cannot avoid is to reflect its maker. Rather than correct such a bias in pursuit of objectivity, can it be a resource? From trying to recognise yourself in the thing you critique, students were asked to make a self-portrait and display it above their shoes. In a collective crit we tried to read the alternative gestures in the images.</p>
+			<img src="images/egocrit.jpg" class="card-image"/>
+			<img src="images/3portraits.jpg" class="card-image"/>
+
+			<img src="images/portraithorizon.jpg" class="card-image"/>
+		</div>
+	</div>
+
+	<a href="#xp" style="right: 35vw; top: 25vh;" class="plant">
+		<img src="images/guidesite.png"/>
+	</a>
+	<div id="xp" class="card">
+		<a class="back" href="#"> </a>
+		<div>
+			<a href="#" title="back" class="card-close">X</a>
+			<h3>subject matter</h3>
+			<img src="images/guidesite.jpg" class="card-image"/>
+			<h2>How to XP?</h2>
+			<p>A guide on how to start and run a collective non-commercial art space.</p>
+			<p>When NY-based web artist Elliott Cost visited our Extra Practice studio, he wanted one himself in NYC. Things we took for granted turned out crucial to create a place to support each other in self-initiated work. So we decided to make a guide. <strong>How to XP?</strong> collects stories on the most important elements and infrastructure of the space. Such as the importance of a Big all-purpose Table to invite collective eating, meeting, and learning. We launched this guide both as a website and through an exhibition where the space itself was the art.</p>
+			<a href="http://extrapractice.space/how-to/" target="_blank"><button>The online guide</button></a>
+		</div>
+	</div>
+
+	<a href="#yes" style="right: 12vw; top: 40vh;" class="plant">
+		<img src="images/ballwallet.png"/>
+	</a>
+	<div id="yes" class="card">
+		<a class="back" href="#"> </a>
+		<div>
+			<a href="#" title="back" class="card-close">X</a>
+			<h3>subject matter</h3>
+			<img src="images/freewallets.jpg" class="card-image"/>
+			<h2>&#165;&euro;&#36; supernormal</h2>
+			<p>A series of wallets that make it harder to pay contactless, as seamless as possible.</p>
+			<p>How can restriction feel liberating? I explored the role of interaction design offering restrictions in a series of wallets. I tried to test its seduction by appropriating a tested medium for designing desires: the fashion film. First we counted, then we pinned, then we swiped, then we were free, and wanted more friction.</p>
+			<img src="images/yesstart.jpg" class="card-image"/>
+		</div>
+	</div>
+
+	<a href="#guilt" style="left: 35vw; top: 8vh; width:80px;" class="plant">
+		<img src="images/cmag.png"/>
+	</a>
+	<div id="guilt" class="card">
+		<a class="back" href="#"> </a>
+		<div>
+			<a href="#" title="back" class="card-close">X</a>
+			<h3>hypocrits</h3>
+			<img src="images/guilt.jpg" class="card-image"/>
+			<h2>Designer Guilt</h2>
+			<p>An essay where I think through the guilt that comes with designing on a broken planet, through the metaphor of a long shower.</p>
+			<p>I saw a trend in graduation projects to deal with guilty instincts, aesthetics, production processes and materials. Design can be an apt guilt relief, but always temporarily. I explore an opposite track. If guilt is a feeling that points at a discrepancy between behaviour and beliefs, it is also an invitation for change. Can design help to arouse guilt?</p>
+		</div>
+	</div>
+
+	<a href="#thesis" style="right: 5vw; top: 7vh;" class="plant">
+		<img src="images/chair.png"/>
+	</a>
+	<div id="thesis" class="card">
+		<a class="back" href="#"> </a>
+		<div>
+			<a href="#" title="back" class="card-close">X</a>
+			<h3>subject matter</h3>
+			<img src="images/mediation.jpg" class="card-image"/>
+			<h2>Posthumanist Design</h2>
+			<p>A video essay proposing a relational role for interaction designers by rethinking the agency of the user. If technology is so influential, why does it often feel so neutral? When looking at principles it seems the answer is clear: design. Rather than offering clarity and control, could design make its influence explicit in restriction and ambiguity? From my MSc thesis research I designed a narrative that grounds the abstract ideas in everyday experi- ences with phones, chairs, piggy banks.</p>
+			<img src="images/metamediation.jpg" class="card-image"/>
+		</div>
+	</div>
+
+	<a href="#garden" style="left: 41%; bottom: 15%;" class="plant">
+		<img src="images/planetcatch.png"/>
+	</a>
+	<div id="garden" class="card">
+		<a class="back" href="#"> </a>
+		<div>
+			<a href="#" title="back" class="card-close">X</a>
+			<h3>care technology</h3>
+			<img src="images/gijsgarden.jpg" class="card-image"/>
+			<h2>gijs.garden</h2>
+			<p>A gathering site for Care Tools: ways that design affects human-plant relations.</p>
+			<p>Starting from the phenomenon of houseplants, I got fascinated by how they seduce me into a kind of care where I try to control their growth. Does the plant even want to be bigger? I'm looking for ways of acting that respect the agency outside myself, without careful turning into inertia (which is rather careless). How do Tools prevent me or help me get there?</p>
+			<a href="https://gijs.garden" target="_blank"><button>The Gate to the Garden</button></a>
+			<!-- <button onclick="gardengate()">
+				<h3 style="margin:0; padding:0;">The Gate to the Garden</h3>
+			</a>
+			</button> -->
+			<img src="images/plantgrid.jpg" class="card-image"/>
+			<img src="images/xpplants.jpg" class="card-image"/>
+		</div>
+	</div>
+
+	<a href="#objectportrait" style="max-height:20dvh;left: 48%; bottom: 45%;" class="plant">
+		<img src="images/opgijsbright.jpg"/>
+	</a>
+	<div id="objectportrait" class="card">
+		<a class="back" href="#"> </a>
+		<div>
+			<a href="#" title="back" class="card-close">X</a>
+			<h3>subject matter</h3>
+			<img src="images/OP3.jpg" class="card-image"/>
+			<h2>Objective Portrait</h2>
+			<p>Vera van der Burg and I made a series of video self-portraits that explore if an AI can help a maker reflect on their position and work. We trained an object-recognition algorithm on our subjective gaze, and let it interpret a portrait of objects we made and collected.</p>
+			<img src="images/OPlabel.jpg" class="card-image"/>
+			<p>Shown at Dutch Design Week 2022.</p>
+			<img src="images/OPddw.jpg" class="card-image"/>
+			<!-- <a href="https://ddw.nl/en/programme/8546/objective-portrait" target="_blank"><button>On show during DDW</button></a> -->
+		</div>
+	</div>
+
+	<a href="#foxtraps" style="left: 32%; top: 33%;" class="plant">
+		<img src="images/herobait.jpg"/>
+	</a>
+	<div id="foxtraps" class="card">
+		<a class="back" href="#"> </a>
+		<div>
+			<a href="#" title="back" class="card-close">X</a>
+			<h3>hypocrits</h3>
+			<img src="images/memecompass.png" class="card-image"/>
+			<h2>Between Fox Traps and Hero Bait</h2>
+			<p>In this visual essay I explore what design discourse can learn from the messy poetics of emerging types of memes. In particular, if bait for designers in hero roles could be self-aware like @afffirmations, and if critique can be voiced with internal conflicts, like @avocado_ibuprofen.</p>
+			<p>Written for the Design Drafts program by Het Nieuwe Instituut and Disegno, edited by Delany Boutkan and Oli Stratford.</p>
+			<!-- <a href="https://ddw.nl/en/programme/8546/objective-portrait" target="_blank"><button>On show during DDW</button></a> -->
+			<img src="images/memewall.jpg" class="card-image"/>
+		</div>
+	</div>
+
+	<a href="#postgrowth" style="left: 7%; top: 58%;" class="plant">
+		<img src="images/postgrowth.jpg"/>
+	</a>
+	<div id="postgrowth" class="card">
+		<a class="back" href="#"> </a>
+		<div>
+			<a href="#" title="back" class="card-close">X</a>
+			<h3>care technology</h3>
+			<img src="images/postgrowth.jpg" class="card-image"/>
+			<h2>Post-Growth Compass</h2>
+			<p>I was invited by think tank <a href="https://stt.nl/nl/toekomstverkenningen/de-toekomstige-verhouding-tussen-mens-natuur-en-technologie" target="_blank">STT</a> to reflect critically on their five future scenarios of tech-mediated human-nature relations.</p>
+			<p>Inspired by Joanna Pope's critical appropriation of the <a href="https://youtu.be/z23ADy2_JZY?feature=shared" target="_blank" rel="noopener noreferrer">future compass</a> meme format, and Elvia Wilk's thoughts on entangled futures, I responded with this custom <strong>Post-Growth Compass</strong> (<a href="images/postgrowthcompass.png" target="_blank" rel="noopener noreferrer">view full-size</a>). It shows 16 futures ordered on an X-axis on their conception of nature (separate-entangled) and an Y-axis on the interpretation of the responsibility of humans (hubristic-humble).
+			</p>
+			<p>The legend below links each square to two others as part of the same world, making explicit how any scenario you pick comes with its periphery and counterculture, and vice versa.</p>
+			<img src="images/legend.png" class="card-image" style="width: 50%; margin: auto;"/>
+
+			<p>Read more and play the quiz on gijs.garden:</p>
+			<a href="https://gijs.garden/#futuresinfo" target="_blank"><button>Find your post-growth future</button></a>
+		</div>
+	</div>
+
+	<a href="#powertools" style="left: 21%; top: 56%;" class="plant">
+		<img src="images/raketech.jpg"/>
+	</a>
+	<div id="powertools" class="card">
+		<a class="back" href="#"> </a>
+		<div>
+			<a href="#" title="back" class="card-close">X</a>
+			<h3>care technology</h3>
+			<img src="images/plantcarecompass.jpg" class="card-image"/>
+			<h2>Plantcare and Power Tools</h2>
+			<p>In this visual essay I look for tools for trustful care. It takes shape as a walk through the four corners of <a href="http://gijs.garden" target="_blank" rel="noopener noreferrer">gijs.garden</a>. I identify four types of Care Tools: Rakes, Pots, Windows and Trellises, and think through how they frame our relations with plants. <a href="resources/robida-scan.pdf" target="_blank" rel="noopener noreferrer">View a scan</a>, or read it on gijs.garden.</p>
+			<a href="https://gijs.garden/#powertools" target="_blank"><button style="margin-bottom: 10px;">Read the essay online</button></a>
+			<p>Written for the Soil issue no 9 of <a href="https://robidacollective.com/projects/robida-magazine" target="_blank" rel="noopener noreferrer">Robida Magazine</a>, edited by Aljaž Škrlep.</p>
+			<!-- <a href="https://ddw.nl/en/programme/8546/objective-portrait" target="_blank"><button>On show during DDW</button></a> -->
+			<img src="images/gardencorners.jpg" class="card-image"/>
+		</div>
+	</div>
+
+</div>
+	<!-- <button onclick="gardengate()">
+	<a href="#planetcatch" style="left: 5%; bottom: 5%;" class="plant">
+		<img src="images/planetcatch.png"/>
+		<p id="land"></p>
+	</a>
+	</button> -->
+<footer>
+	<p class="caption" style="position: fixed; bottom:0px; right: 5px; font-size:0.6em; color: white;">last updated 13/08/2024</p>
+</footer>
+
+<script type="text/javascript">
+	const root = document.documentElement;
+
+	
+	document.addEventListener('mousemove', evt => {
+		let x = evt.clientX / innerWidth;
+		let y = evt.clientY / innerHeight;
+
+		root.style.setProperty('--mouse-x', x);
+		root.style.setProperty('--mouse-y', y);
+	});
+
+	function gardengate() {
+	  var txt;
+	  if (confirm("Wow. Are you really sure you wanne go to the garden?") == true) {
+		location.assign("http://gijs.garden");}
+	    else {
+	    txt = "Safe choice.";
+	  }
+	  document.getElementById("land").innerHTML = txt;
+	}
+
+	
+  function copyEmail() {
+    // Get the email address
+    var email = 'info@supergijs.com';
+
+    // Create a temporary input element
+    var tempInput = document.createElement('input');
+    tempInput.value = email;
+    document.body.appendChild(tempInput);
+
+    // Select and copy the email address
+    tempInput.select();
+    document.execCommand('copy');
+
+    // Remove the temporary input element
+    document.body.removeChild(tempInput);
+
+    // Change the button text to indicate successful copy
+    var button = document.getElementById('copy-btn');
+    button.innerText = 'copied "info@supergijs.com"';
+
+    // Revert the button text after 3 seconds (adjust as needed)
+    setTimeout(function() {
+        button.innerText = 'copy my email';
+    }, 3000);
+  }
+
+</script>
+</body>
+
+</html>

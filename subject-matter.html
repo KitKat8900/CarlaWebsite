@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subject Matter – supergijs</title>
+<style>
+  :root { --bg:#e47b4e; --paper:#faebd7; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:#000; font:20px/1.6 "Times New Roman", Georgia, serif; }
+  main { width:min(900px, calc(100% - 40px)); margin:0 auto; padding:60px 0 120px; }
+  .card { background:var(--paper); border:3px solid #000; padding:48px 52px; margin-bottom:40px; }
+  h1 { font:900 clamp(40px,6vw,72px)/1 "Arial Black", Arial, sans-serif; letter-spacing:-.03em; margin:0 0 24px; }
+  .lede { font-size:clamp(24px,3vw,34px); line-height:1.35; margin:0 0 32px; }
+  hr { border:0; border-top:1px solid #000; margin:0 0 28px; }
+  dl { display:grid; grid-template-columns:auto 1fr; gap:10px 40px; margin:0; font-style:italic; }
+  dt { font:900 italic 22px "Arial Black", Arial, sans-serif; }
+  dd { margin:0; }
+  section { padding:0 20px; margin-bottom:48px; }
+  section h2 { font:900 30px "Arial Black", Arial, sans-serif; letter-spacing:-.02em; margin:0 0 12px; }
+  .quest { font-style:italic; }
+  a { color:inherit; }
+
+  /* side nav: built automatically from the sections below */
+  nav { position:fixed; top:28px; right:28px; text-align:right; line-height:1.45; }
+  nav a { display:block; text-decoration:none; }
+  nav a.here { text-decoration:underline; }
+  nav .home { font:900 20px "Arial Black", Arial, sans-serif; }
+  @media (max-width:1150px) { nav { position:static; text-align:left; padding:20px; } }
+</style>
+</head>
+<body>
+<nav id="nav"><a class="home" href="Carla HTML.html">supergijs</a><a class="here" href="#top">subject matter</a></nav>
+
+<main id="top">
+  <div class="card">
+    <h1>Subject Matter</h1>
+    <p class="lede">A framework for thinking the influence of the material world on how you understand your role in that context, your subjectivity.</p>
+    <hr>
+    <dl>
+      <dt>how:</dt><dd>replace with a short line</dd>
+      <dt>for:</dt><dd>replace with a short line</dd>
+      <dt>when:</dt><dd>replace with a short line</dd>
+      <dt>where:</dt><dd>replace with a short line, <a href="#">or a link</a></dd>
+    </dl>
+  </div>
+
+  <p class="quest">Replace this with the guiding question or intro paragraph.</p>
+
+  <!-- Each section below shows up in the right-hand nav automatically. Copy one to add another. -->
+  <section data-nav="about">
+    <h2>About</h2>
+    <p>Replace this with a paragraph describing the work.</p>
+  </section>
+  <section data-nav="projects">
+    <h2>Projects</h2>
+    <p>Replace this with a paragraph describing the work.</p>
+  </section>
+</main>
+
+<script>
+const nav = document.getElementById("nav");
+document.querySelectorAll("section[data-nav]").forEach(s => {
+  s.id = s.dataset.nav;
+  const a = document.createElement("a");
+  a.href = "#" + s.id; a.textContent = s.dataset.nav + " \u21B2";
+  nav.appendChild(a);
+});
+</script>
+</body>
+</html>
