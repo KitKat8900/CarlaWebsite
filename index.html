@@ -33,7 +33,7 @@
 </head>
 
 <body>
-
+<canvas id="bg3d"></canvas>
 
 	<header>
 		<h1>Carla WebsiteV2</h1>
@@ -447,6 +447,77 @@
     }, 3000);
   }
 
+</script>
+
+<script type="importmap">
+{ "imports": {
+	"three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+	"three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+const canvas = document.getElementById('bg3d');
+const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
+camera.position.set(0, 0, 6);
+
+scene.add(new THREE.AmbientLight(0xffffff, 1.2));
+const light = new THREE.DirectionalLight(0xffffff, 2);
+light.position.set(2, 3, 5);
+scene.add(light);
+
+// the pivot is what rotates toward the mouse
+const pivot = new THREE.Group();
+scene.add(pivot);
+
+new GLTFLoader().load('model.glb', (gltf) => {
+	const model = gltf.scene;
+
+	// center and scale the model so it fits the view
+	const box = new THREE.Box3().setFromObject(model);
+	const size = box.getSize(new THREE.Vector3()).length();
+	const center = box.getCenter(new THREE.Vector3());
+	const s = 3 / size;
+	model.scale.setScalar(s);
+	model.position.copy(center).multiplyScalar(-s);
+
+	// if the model's face points the wrong way, uncomment:
+	// model.rotation.y = Math.PI;
+
+	pivot.add(model);
+});
+
+// mouse position from -1 to 1 (top-left is -1, +1)
+const mouse = { x: 0, y: 0 };
+window.addEventListener('pointermove', (e) => {
+	mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+	mouse.y = (e.clientY / window.innerHeight) * 2 - 1;
+});
+
+function resize() {
+	renderer.setSize(window.innerWidth, window.innerHeight, false);
+	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.updateProjectionMatrix();
+}
+window.addEventListener('resize', resize);
+resize();
+
+const maxTurn = 0.9; // how far it turns (radians); raise for a bigger turn
+function animate() {
+	requestAnimationFrame(animate);
+	// ease toward the target so it moves smoothly instead of snapping
+	pivot.rotation.y += (mouse.x * maxTurn - pivot.rotation.y) * 0.08;
+	pivot.rotation.x += (mouse.y * maxTurn - pivot.rotation.x) * 0.08;
+	renderer.render(scene, camera);
+}
+animate();
 </script>
 </body>
 
