@@ -477,8 +477,18 @@ scene.add(light);
 const pivot = new THREE.Group();
 scene.add(pivot);
 
-new GLTFLoader().load('model.glb', (gltf) => {
-	const model = gltf.scene;
+new OBJLoader().load('models/Asset_3.obj', (model) => {
+	// the .obj has no color, so give it a material here
+	model.traverse((child) => {
+		if (child.isMesh) {
+			child.material = new THREE.MeshStandardMaterial({
+				color: 0xffffff,
+				roughness: 0.6,
+				metalness: 0.1,
+				side: THREE.DoubleSide
+			});
+		}
+	});
 
 	// center and scale the model so it fits the view
 	const box = new THREE.Box3().setFromObject(model);
@@ -487,9 +497,6 @@ new GLTFLoader().load('model.glb', (gltf) => {
 	const s = 3 / size;
 	model.scale.setScalar(s);
 	model.position.copy(center).multiplyScalar(-s);
-
-	// if the model's face points the wrong way, uncomment:
-	// model.rotation.y = Math.PI;
 
 	pivot.add(model);
 });
