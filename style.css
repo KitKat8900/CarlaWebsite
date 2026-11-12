@@ -18,6 +18,9 @@ html {
 	position: fixed;
 	inset: 0;
 	z-index: 999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	visibility: hidden;
 	opacity: 0;
 	transition: all 0.3s;
@@ -26,18 +29,32 @@ html {
 	visibility: visible;
 	opacity: 1;
 }
-.artist-popup .panel {
+
+/* click anywhere outside the box to close */
+.artist-popup .backdrop {
 	position: absolute;
 	inset: 0;
-	overflow-y: auto;
+	background: rgba(0, 0, 0, 0.35);
+}
+
+/* the box itself */
+.artist-popup .panel {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	width: 25vw;        /* change this to resize the whole popup */
+	min-width: 320px;
+	max-width: 92vw;
+	max-height: 85vh;
 	background: #0a0612;
 	color: #fff;
+	container-type: inline-size; /* lets text scale with the box */
 }
 .artist-popup .close {
-	position: fixed;
-	top: 14px;
-	right: 18px;
-	z-index: 2;
+	position: absolute;
+	top: -1.6em;
+	right: 0;
 	color: #fff;
 	text-decoration: none;
 	font-family: 'Squeezed', Impact, sans-serif;
@@ -45,9 +62,9 @@ html {
 
 /* title with purple lines above and below */
 .artist-popup .title-band {
-	margin-top: 6px;
-	border-top: 4px solid #9b4dff;
-	border-bottom: 4px solid #9b4dff;
+	flex-shrink: 0;
+	border-top: 3px solid #9b4dff;
+	border-bottom: 3px solid #9b4dff;
 	padding: 0.05em 0.3em;
 }
 .artist-popup h2 {
@@ -55,31 +72,34 @@ html {
 	text-align: center;
 	font-family: 'Squeezed', Impact, 'Arial Narrow', sans-serif;
 	font-weight: normal;
-	font-size: clamp(3rem, 16vw, 14rem);
+	font-size: 4vw;                       /* fallback */
+	font-size: clamp(1.8rem, 15cqw, 5rem);
 	line-height: 1;
 	text-transform: uppercase;
 	color: #fff;
 }
 
-/* text | images | text */
+/* text | images | text (scrolls if it gets long) */
 .artist-popup .popup-body {
+	overflow-y: auto;
 	display: grid;
 	grid-template-columns: 1fr minmax(0, 1.15fr) 1fr;
-	gap: 4vw;
-	padding: 4px 4vw 60px;
+	gap: 3cqw;
+	padding: 3cqw 4cqw 4cqw;
 	align-items: start;
 }
 .artist-popup .middle img {
 	width: 100%;
 	display: block;
-	margin-bottom: 40px;
+	margin-bottom: 3cqw;
 }
 .artist-popup .side p {
-	margin: 0 0 1.5em;
+	margin: 0 0 1.2em;
 	padding: 0;
 	text-align: left;
 	text-transform: uppercase;
 	font-family: 'Squeezed', Impact, 'Arial Narrow', sans-serif;
+	font-size: clamp(0.55rem, 2.6cqw, 0.9rem);
 	line-height: 1.2;
 }
 
