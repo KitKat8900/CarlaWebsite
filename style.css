@@ -397,6 +397,13 @@ header li{
 		-webkit-filter: drop-shadow(5px 5px 5px yellow);
 		filter: drop-shadow(5px 5px 5px yellow);
 	}
+	.plant.artist {
+	width: 8.5vw;
+	}
+	.plant.artist img {
+		width: 100%;
+		display: block;
+	}
 
 /* CARDS */
 .card {
