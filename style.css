@@ -8,6 +8,81 @@ html {
 
 }
 
+@font-face {
+	font-family: 'Squeezed';
+	src: url('OTNeueMontreal-SemiBoldExtraSqueezed.otf') format('opentype');
+}
+
+/* ARTIST POPUPS */
+.artist-popup {
+	position: fixed;
+	inset: 0;
+	z-index: 999;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.3s;
+}
+.artist-popup:target {
+	visibility: visible;
+	opacity: 1;
+}
+.artist-popup .panel {
+	position: absolute;
+	inset: 0;
+	overflow-y: auto;
+	background: #0a0612;
+	color: #fff;
+}
+.artist-popup .close {
+	position: fixed;
+	top: 14px;
+	right: 18px;
+	z-index: 2;
+	color: #fff;
+	text-decoration: none;
+	font-family: 'Squeezed', Impact, sans-serif;
+}
+
+/* title with purple lines above and below */
+.artist-popup .title-band {
+	margin-top: 6px;
+	border-top: 4px solid #9b4dff;
+	border-bottom: 4px solid #9b4dff;
+	padding: 0.05em 0.3em;
+}
+.artist-popup h2 {
+	margin: 0;
+	text-align: center;
+	font-family: 'Squeezed', Impact, 'Arial Narrow', sans-serif;
+	font-weight: normal;
+	font-size: clamp(3rem, 16vw, 14rem);
+	line-height: 1;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+/* text | images | text */
+.artist-popup .popup-body {
+	display: grid;
+	grid-template-columns: 1fr minmax(0, 1.15fr) 1fr;
+	gap: 4vw;
+	padding: 4px 4vw 60px;
+	align-items: start;
+}
+.artist-popup .middle img {
+	width: 100%;
+	display: block;
+	margin-bottom: 40px;
+}
+.artist-popup .side p {
+	margin: 0 0 1.5em;
+	padding: 0;
+	text-align: left;
+	text-transform: uppercase;
+	font-family: 'Squeezed', Impact, 'Arial Narrow', sans-serif;
+	line-height: 1.2;
+}
+
 #bg3d {
 	position: fixed;
 	inset: 0;
