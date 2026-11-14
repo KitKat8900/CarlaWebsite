@@ -398,8 +398,6 @@ header li{
 	background: rgba(255,255,255,1.0);
 	z-index: 2;
 }
-.world:onclick{
-}
 
 /* PLANTS */
 	.plant {

@@ -64,10 +64,10 @@ html, body {
 
 /* ascii art: a box that ends well above the song text */
 .ascii {
-	left: 3vw;
+	left: 0vw;
 	top: 52.6%;
-	width: 108%;      /* was 118%: less stretched, so denser */
-	height: 37%;
+	width: 90%;      /* was 118%: less stretched, so denser */
+	height: 42%;
 	z-index: 1;
 }
 .ascii pre {
