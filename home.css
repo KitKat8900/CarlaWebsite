@@ -31,7 +31,7 @@ html, body {
 /* big GIRL EDM title: keeps its own proportions, stuck to the right */
 .title {
 	position: top left;
-    top: -0.5;
+    top: -2;
 	z-index: 2;
 	flex: none;
 	align-self: flex-start;
@@ -66,8 +66,8 @@ html, body {
 .ascii {
 	left: 3vw;
 	top: 52.6%;
-	width: 118%;                 /* runs a little under the title */
-	height: 36%;
+	width: 108%;      /* was 118%: less stretched, so denser */
+	height: 37%;
 	z-index: 1;
 }
 .ascii pre {
@@ -78,12 +78,13 @@ html, body {
 	width: max-content;
 	white-space: pre;
 	font-family: Consolas, Menlo, 'Courier New', monospace;
-	font-weight: normal;
+	font-weight: 700;  /* bold */
 	color: #000;
 }
 
 /* the three 3D links */
 .obj-link {
+	position: absolute;
 	display: block;
 	z-index: 3;
 	cursor: pointer;
@@ -93,9 +94,9 @@ html, body {
 	height: 100%;
 	display: block;
 }
-#link-scale    { left: 31.3%; top: 53.5%; width: 20.6%; height: 11.5%; }
-#link-blog     { left: 62.6%; top: 65%;   width: 23.2%; height: 11.5%; }
-#link-timeline { left: 9.3%;  top: 73.5%; width: 24.1%; height: 9.5%; }
+#link-scale    { left: 28.4%; top: 0%;    width: 27%;   height: 35.8%; }
+#link-blog     { left: 55.4%; top: 18.4%; width: 25.7%; height: 38.4%; }
+#link-timeline { left: 1.4%;  top: 53.2%; width: 32.4%; height: 20%;   }
 
 /* now listening */
 .listen {
@@ -126,7 +127,7 @@ html, body {
 	top: 93.5%;
 	margin: 0;
 	z-index: 3;
-	font-size: min(0.8vw, 1.25vh);
+	font-size: min(2.5vh, 2.5vh);
 	line-height: 1.3;
 	text-transform: uppercase;
 }
