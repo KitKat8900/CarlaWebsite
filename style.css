@@ -5,6 +5,8 @@ html {
     --mouse-y: 0;
 	--bgfade: rgb(255,calc(var(--mouse-y) * -50 + 100),calc(var(--mouse-x) * -80 + 235));
 	--fade-width:15px;
+	--line: 3px;          /* thickness of the white lines */
+	--label-size: 1.8em;  /* size of Club Anthem, Classic Club, etc. */
 
 }
 
@@ -216,7 +218,7 @@ header h1{
 	text-align: left;
 	margin: 0 20px;
 	display: inline;
-	font-size: 1.8em;
+	font-size: 1.5em;
 	font-family: 'Squeezed', Impact, 'Arial Narrow', sans-serif;
 }
 header p{
@@ -565,40 +567,22 @@ button:hover{
 /* LABELS */
 
 
-	.label h2 {
-		margin: 0px;
-		font-size: 1em;
-	}
+.label h2 {
+	margin: 0;
+	font-size: var(--label-size);
+	white-space: nowrap;
+}
 
-	.label {
-		display: inline-block;
-		height: 45px;
-		width: 110px;
-		position: absolute;
-		color: white;
-		text-align: center;
-	}
-
-	#left {
-		left:-1vw;
-		top: 50%;
-		margin-top: -10px;
-	}
-	#right {
-		right:1vw;
-		top: 50%;
-		margin-top: -10px;
-	}
-	#top {
-		right:50%;
-		top: 10px;
-		margin-right: -55px;
-	}
-	#bottom {
-		right:50%;
-		bottom: -20px;
-		margin-right: -55px;
-	}
+.label {
+	position: absolute;
+	display: inline-block;
+	color: white;
+	text-align: center;
+}
+#left   { left: 1vw;  top: 50%;    transform: translateY(-50%); }
+#right  { right: 1vw; top: 50%;    transform: translateY(-50%); }
+#top    { left: 50%;  top: 10px;   transform: translateX(-50%); }
+#bottom { left: 50%;  bottom: 10px; transform: translateX(-50%); }
 
 	.hair{
 	    background-color:white;
@@ -607,20 +591,21 @@ button:hover{
 	}
 
 	#crosshair-h {
-		left: 130px;
-		right:130px;
-	    height:1px;
-	    top:50%;
-	    position: absolute;
-	}
-
-	#crosshair-v{
-	    width:1px;
-	    left:50%;
-	    position:absolute;
-	    top: 40px;
-			bottom: 40px;
-	}
+	position: absolute;
+	left: 190px;
+	right: 190px;
+	height: var(--line);
+	top: 50%;
+	transform: translateY(-50%);
+}
+	#crosshair-v {
+	position: absolute;
+	width: var(--line);
+	left: 50%;
+	top: 70px;
+	bottom: 70px;
+	transform: translateX(-50%);
+}
 
 	@media only screen and (max-width: 900px) {
 
@@ -639,12 +624,6 @@ button:hover{
 		}
 		details li{
 			margin-bottom:0.3ch;
-		}
-		.label{
-			width: 70px;
-		}
-		#bottom, #top{
-			margin-right: -35px;
 		}
 		.label h2{
 			font-size: 0.7em;
