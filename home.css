@@ -30,7 +30,8 @@ html, body {
 
 /* big GIRL EDM title: keeps its own proportions, stuck to the right */
 .title {
-	position: relative;
+	position: top left;
+    top: -0.5;
 	z-index: 2;
 	flex: none;
 	align-self: flex-start;
@@ -61,14 +62,24 @@ html, body {
 	z-index: 1;
 }
 
-/* ascii art: stretches to fill, runs a little under the title */
+/* ascii art: a box that ends well above the song text */
 .ascii {
 	left: 3vw;
 	top: 52.6%;
-	width: 118%;
-	height: 46%;
-	object-fit: fill;            /* use "contain" if you don't want it stretched */
+	width: 118%;                 /* runs a little under the title */
+	height: 36%;
 	z-index: 1;
+}
+.ascii pre {
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin: 0;
+	width: max-content;
+	white-space: pre;
+	font-family: Consolas, Menlo, 'Courier New', monospace;
+	font-weight: normal;
+	color: #000;
 }
 
 /* the three 3D links */
@@ -82,9 +93,9 @@ html, body {
 	height: 100%;
 	display: block;
 }
-#link-scale    { left: 31.3%; top: 54%;   width: 20.6%; height: 10%; }
-#link-blog     { left: 62.6%; top: 65.5%; width: 23.2%; height: 10%; }
-#link-timeline { left: 9.3%;  top: 74.5%; width: 24.1%; height: 7.5%; }
+#link-scale    { left: 31.3%; top: 53.5%; width: 20.6%; height: 11.5%; }
+#link-blog     { left: 62.6%; top: 65%;   width: 23.2%; height: 11.5%; }
+#link-timeline { left: 9.3%;  top: 73.5%; width: 24.1%; height: 9.5%; }
 
 /* now listening */
 .listen {

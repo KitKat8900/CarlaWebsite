@@ -16,10 +16,10 @@
 		<img class="hero" src="gifs/girl%20edm.gif" alt="">
 
 		<!-- ascii art -->
-		<img class="ascii" src="ascii-art%20(3).png" alt="">
+		<div class="ascii"><pre id="ascii" aria-hidden="true"></pre></div>
 
 		<!-- 3D links: the model path goes in data-model -->
-		<a class="obj-link" id="link-scale" href="scale.html" aria-label="music scale">
+		<a class="obj-link" id="link-scale" href="EdmScale.html" aria-label="music scale">
 			<canvas data-model="web assets/OBJ/Asset 2.obj"></canvas>
 		</a>
 		<!-- change href="#" to blog.html once that page exists -->
@@ -46,6 +46,37 @@
 	<p class="credit">Website design by Carla Mu&ntilde;oz<br>Coded by Lucas Jaramillo</p>
 
 </div>
+
+<script>
+// ascii art comes from the text file; it is spaced out to fill its box
+(async function () {
+	const pre = document.getElementById('ascii');
+	const box = pre.parentElement;
+	let rows = 1, cols = 1;
+
+	function fit() {
+		const lh = box.clientHeight / rows;           // rows fill the box height
+		pre.style.fontSize = lh + 'px';
+		pre.style.lineHeight = lh + 'px';
+		pre.style.letterSpacing = '0px';
+		// spread the columns so the art fills the box width
+		pre.style.letterSpacing = ((box.clientWidth - pre.offsetWidth) / cols) + 'px';
+	}
+
+	try {
+		const res = await fetch('ascii-art (1).txt');
+		const text = (await res.text()).replace(/\r/g, '').replace(/\s+$/, '');
+		const lines = text.split('\n');
+		rows = lines.length;
+		cols = Math.max(...lines.map((l) => l.length));
+		pre.textContent = text;
+		fit();
+		window.addEventListener('resize', fit);
+	} catch (e) {
+		console.error('ascii art failed to load', e);
+	}
+})();
+</script>
 
 <script type="importmap">
 { "imports": {
@@ -120,7 +151,7 @@ function setupObject(canvas) {
 		if (size) {
 			const t = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
 			const dist = Math.max(size.y / 2 / t, size.x / 2 / (t * camera.aspect));
-			camera.position.set(0, 0, dist * 1.25 + size.z / 2);
+			camera.position.set(0, 0, dist * 1.4 + size.z / 2);
 		}
 	}
 
