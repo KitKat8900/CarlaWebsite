@@ -61,6 +61,7 @@ html, body {
 	object-fit: cover;
 	object-position: center 10%; /* was 35%, shows more of the top */
 	z-index: 1;
+    margin-left: -1dvh;
 }
 
 /* ascii art: a box that ends well above the song text */
@@ -70,6 +71,7 @@ html, body {
 	width: 90%;      /* was 118%: less stretched, so denser */
 	height: 38%;
 	z-index: 1;
+    margin-left: -1dvh;
 }
 .ascii pre {
 	position: absolute;
