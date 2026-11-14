@@ -1,569 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>CARLAS EDM SCALE</title>
-	<link rel="stylesheet" href="style.css" />
+	<meta charset="utf-8">
+	<title>GIRL EDM</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- <script src="portfolio.js" defer></script> -->
-
-
-<style>
-	@keyframes wiggle {
-	  0%   {margin: 0;}
-		50%  {margin: -10px 15px;}
-	  100% {margin: 13px 11px;}
-		}
-
-	#subject {
-		animation: wiggle 10s infinite alternate;
-	}
-	#ego {
-		animation: wiggle 20s infinite alternate;
-	}
-
-	#trust {
-		animation: wiggle 5s infinite alternate;
-	}
-	#care {
-		animation: wiggle 10s infinite alternate;
-		 }
-</style>
+	<link rel="stylesheet" href="home.css" />
 </head>
 
 <body>
-<canvas id="bg3d"></canvas>
+<div class="stage">
 
-	<header>
-		<h1>CARLAS EDM SCALE</h1>
+	<!-- photo / gif -->
+	<img class="hero" src="gifs/girl%20edm.gif" alt="">
 
+	<!-- big title -->
+	<img class="title" src="web%20assets/girl%20edm%20title.svg" alt="GIRL EDM">
 
+	<!-- ascii art -->
+	<img class="ascii" src="ascii-art%20(3).png" alt="">
 
-		
-		<!-- <a id="portfoliolink" href="#portfolio">> list of works</a> -->
-	</header>
-
-<div id="sky">
-
-	<div id="crosshair-h" class="hair"></div>
-  	<div id="crosshair-v" class="hair"></div>
-    <div class="label" id="left">
-      <h2>Classic Club</h2>
-    </div>
-    <div class="label" id="right">
-      <h2>Experimental</h2>
-    </div>
-    <div class="label" id="top">
-      <h2>Club Anthem</h2>
-    </div>
-    <div class="label" id="bottom">
-      <h2>Chronologically Online</h2>
-    </div>
-
-<!-- WORK -->
-
-<!-- PORTFOLIO TABLE -->
-
-<div id="portfolio">
-	<a class="back" href="#"> </a>
-	<div class="filter">
-		<!-- <div class="fill"></div> -->
-		<button class="filter-btn" data-category="all">All</button>
-		<button class="filter-btn" data-category="trust">Trust Design</button>
-		<button class="filter-btn" data-category="care">Care Tools</button>
-		<button class="filter-btn" data-category="subject">Subject Matter</button>
-		<button class="filter-btn" data-category="hypocrit">hypocrits</button>
-		<!-- <div class="fill"></div> -->
-		<!-- Add more buttons for other categories as needed -->
-  	</div>
-  	<table id="portfolioTable">
-		<thead>
-		<tr>
-			<th>work</th>
-			<th>research stream</th>
-			<th>context</th>
-			<th>year</th>
-		</tr>
-		</thead>
-		<tbody>
-		<tr data-category="trust">
-			<td><a href="#atm" class="project-link">Always Trust Me</a></td>
-			<td>Trust Design</td>
-			<td>Design Academy Eindhoven</td>
-			<td>2019</td>
-		</tr>
-		<tr data-category="trust">
-			<td>ATM flag</td>
-			<td>Trust Design</td>
-			<td>Design Academy Eindhoven</td>
-			<td>2019</td>
-		</tr>
-		<!-- Add more rows for other projects with respective categories -->
-		</tbody>
- 	</table>
-</div>
-
-	<!-- PROJECTS -->
-<!-- ARTISTS (left = vw, top = vh of the screen) -->
-<!-- top-left to top-center -->
-<!-- Charli XCX -->
-<a href="#charli-xcx" class="plant artist" style="left:1vw; top:9vh;"><img src="gifs/charli-xcx.gif"/></a>
-<div id="charli-xcx" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>Charli XCX</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/charli-xcx.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- Addison Rae -->
-<a href="#addison-rae" class="plant artist" style="left:15vw; top:19vh;"><img src="gifs/addison-rae.gif"/></a>
-<div id="addison-rae" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>Addison Rae</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/addison-rae.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- Shygirl -->
-<a href="#shygirl" class="plant artist" style="left:27vw; top:10vh;"><img src="gifs/shygirl.gif"/></a>
-<div id="shygirl" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>Shygirl</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/shygirl.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- PinkPantheress -->
-<a href="#pinkpantheress" class="plant artist" style="left:41.5vw; top:14vh;"><img src="gifs/pinkpantheress.gif"/></a>
-<div id="pinkpantheress" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>PinkPantheress</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/pinkpantheress.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- left side (classic club) -->
-
-<!-- Adéla -->
-<a href="#adela" class="plant artist" style="left:3.5vw; top:30vh;"><img src="gifs/adela.gif"/></a>
-<div id="adela" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>Adéla</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/adela.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- Tiffany Day -->
-<a href="#tiffany-day" class="plant artist" style="left:19.5vw; top:46vh;"><img src="gifs/tiffany-day.gif"/></a>
-<div id="tiffany-day" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>Tiffany Day</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/tiffany-day.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- Daine -->
-<a href="#daine" class="plant artist" style="left:5vw; top:58.5vh;"><img src="gifs/daine.jpg"/></a>
-<div id="daine" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>Daine</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/daine.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- Underscores -->
-<a href="#underscores" class="plant artist" style="left:20.5vw; top:68vh;"><img src="gifs/underscores.gif"/></a>
-<div id="underscores" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>Underscores</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/underscores.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- EQ -->
-<a href="#eq" class="plant artist" style="left:20.5vw; top:83.5vh;"><img src="gifs/eq.jpeg"/></a>
-<div id="eq" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>EQ</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/eq.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- center -->
-
-<!-- Fcukers -->
-<a href="#fcukers" class="plant artist" style="left:40.5vw; top:34vh;"><img src="gifs/fcukers.gif"/></a>
-<div id="fcukers" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>Fcukers</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/fcukers.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- Mgna Crrrta -->
-<a href="#mgna-crrrta" class="plant artist" style="left:43.5vw; top:55.5vh;"><img src="gifs/mgna-crrrta.gif"/></a>
-<div id="mgna-crrrta" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>Mgna Crrrta</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/mgna-crrrta.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- Cannelle -->
-<a href="#cannelle" class="plant artist" style="left:33.5vw; top:63.5vh;"><img src="gifs/cannelle.gif"/></a>
-<div id="cannelle" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>Cannelle</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/cannelle.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- Izzy Camina -->
-<a href="#izzy-camina" class="plant artist" style="left:33vw; top:88vh;"><img src="gifs/izzy-camina.gif"/></a>
-<div id="izzy-camina" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>Izzy Camina</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/izzy-camina.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- top-right (experimental) -->
-
-<!-- Horsegiirl -->
-<a href="#horsegiirl" class="plant artist" style="left:60vw; top:10vh;"><img src="gifs/horsegirl.gif"/></a>
-<div id="horsegiirl" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>Horsegiirl</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/horsegirl.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- Akriila -->
-<a href="#akriila" class="plant artist" style="left:72vw; top:16vh;"><img src="gifs/akriila.gif"/></a>
-<div id="akriila" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>Akriila</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/akriila.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- Arca -->
-<a href="#arca" class="plant artist" style="left:84.5vw; top:6vh;"><img src="gifs/arca.gif"/></a>
-<div id="arca" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>Arca</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/arca.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- Bass Victim -->
-<a href="#bass-victim" class="plant artist" style="left:59vw; top:36vh;"><img src="gifs/bassvictim.gif"/></a>
-<div id="bass-victim" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>Bass Victim</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/bassvictim.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- Sophie -->
-<a href="#sophie" class="plant artist" style="left:88vw; top:33vh;"><img src="gifs/sophie.gif"/></a>
-<div id="sophie" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>Sophie</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/sophie.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- bottom-right (chronically online) -->
-
-<!-- Frost Children -->
-<a href="#frost-children" class="plant artist" style="left:55vw; top:65vh;"><img src="gifs/frost%20children.gif"/></a>
-<div id="frost-children" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>Frost Children</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/frost%20children.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- Oklou -->
-<a href="#oklou" class="plant artist" style="left:67vw; top:59vh;"><img src="gifs/oklou.gif"/></a>
-<div id="oklou" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>Oklou</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/oklou.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- Ninajirachi -->
-<a href="#ninajirachi" class="plant artist" style="left:70vw; top:75.5vh;"><img src="gifs/ninajirachi.gif"/></a>
-<div id="ninajirachi" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>Ninajirachi</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/ninajirachi.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- Jane Remover -->
-<a href="#jane-remover" class="plant artist" style="left:81.5vw; top:75vh;"><img src="gifs/jane%20remover.gif"/></a>
-<div id="jane-remover" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>Jane Remover</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/jane%20remover.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-<!-- Iza TKM -->
-<a href="#iza-tkm" class="plant artist" style="left:59vw; top:83.5vh;"><img src="gifs/izatkm.gif"/></a>
-<div id="iza-tkm" class="artist-popup">
-	<a href="#" class="backdrop"></a>
-	<div class="panel">
-		<a href="#" class="close">X</a>
-		<div class="title-band"><h2>Iza TKM</h2></div>
-		<div class="popup-body">
-			<div class="side"><p>Text on the left side.</p></div>
-			<div class="middle">
-				<img src="gifs/izatkm.gif"/>
-			</div>
-			<div class="side"><p>Text on the right side.</p></div>
-		</div>
-	</div>
-</div>
-
-</div>
-	<!-- <button onclick="gardengate()">
-	<a href="#planetcatch" style="left: 5%; bottom: 5%;" class="plant">
-		<img src="images/planetcatch.png"/>
-		<p id="land"></p>
+	<!-- 3D links: the model path goes in data-model -->
+	<a class="obj-link" id="link-scale" href="scale.html" aria-label="music scale">
+		<canvas data-model="web assets/OBJ/Asset 1.obj"></canvas>
 	</a>
-	</button> -->
+	<!-- change href="#" to blog.html once that page exists -->
+	<a class="obj-link" id="link-blog" href="#" aria-label="blog and interviews">
+		<canvas data-model="web assets/OBJ/Asset 2.obj"></canvas>
+	</a>
+	<!-- change href="#" to timeline.html once that page exists -->
+	<a class="obj-link" id="link-timeline" href="#" aria-label="timeline">
+		<canvas data-model="web assets/OBJ/Asset 3.obj"></canvas>
+	</a>
 
-<script type="text/javascript">
-	const root = document.documentElement;
+	<!-- now listening -->
+	<p class="listen-label">NOW LISTENING TO:</p>
+	<p class="listen-song">bodyfeeling (title of song)</p>
+	<p class="listen-artist">&#8627; underscores (artist)</p>
 
-	
-	document.addEventListener('mousemove', evt => {
-		let x = evt.clientX / innerWidth;
-		let y = evt.clientY / innerHeight;
+	<!-- credits -->
+	<p class="credit">Website design by Carla Mu&ntilde;oz<br>Coded by Lucas Jaramillo</p>
 
-		root.style.setProperty('--mouse-x', x);
-		root.style.setProperty('--mouse-y', y);
-	});
-
-	function gardengate() {
-	  var txt;
-	  if (confirm("Wow. Are you really sure you wanne go to the garden?") == true) {
-		location.assign("http://gijs.garden");}
-	    else {
-	    txt = "Safe choice.";
-	  }
-	  document.getElementById("land").innerHTML = txt;
-	}
-
-	
-  function copyEmail() {
-    // Get the email address
-    var email = 'info@supergijs.com';
-
-    // Create a temporary input element
-    var tempInput = document.createElement('input');
-    tempInput.value = email;
-    document.body.appendChild(tempInput);
-
-    // Select and copy the email address
-    tempInput.select();
-    document.execCommand('copy');
-
-    // Remove the temporary input element
-    document.body.removeChild(tempInput);
-
-    // Change the button text to indicate successful copy
-    var button = document.getElementById('copy-btn');
-    button.innerText = 'copied "info@supergijs.com"';
-
-    // Revert the button text after 3 seconds (adjust as needed)
-    setTimeout(function() {
-        button.innerText = 'copy my email';
-    }, 3000);
-  }
-
-</script>
+</div>
 
 <script type="importmap">
 { "imports": {
@@ -575,72 +53,102 @@
 <script type="module">
 import * as THREE from 'three';
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-const canvas = document.getElementById('bg3d');
-const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+const MAX_TURN = 0.5;       // how far each object turns toward the mouse (radians)
+const EASE = 0.08;          // lower = lazier, higher = snappier
+const OBJ_COLOR = 0x111111; // color of the .obj objects (they have no color of their own)
 
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
-camera.position.set(0, 0, 6);
-
-scene.add(new THREE.AmbientLight(0xffffff, 1.2));
-const light = new THREE.DirectionalLight(0xffffff, 2);
-light.position.set(2, 3, 5);
-scene.add(light);
-
-// the pivot is what rotates toward the mouse
-const pivot = new THREE.Group();
-scene.add(pivot);
-
-new OBJLoader().load('web assets/OBJ/Asset 3.obj', (model) => {
-	// the .obj has no color, so give it a material here
-	model.traverse((child) => {
-		if (child.isMesh) {
-			child.material = new THREE.MeshStandardMaterial({
-				color: 0xffffff,
-				roughness: 0.6,
-				metalness: 0.1,
-				side: THREE.DoubleSide
-			});
-		}
-	});
-
-	// center and scale the model so it fits the view
-	const box = new THREE.Box3().setFromObject(model);
-	const size = box.getSize(new THREE.Vector3()).length();
-	const center = box.getCenter(new THREE.Vector3());
-	const s = 3 / size;
-	model.scale.setScalar(s);
-	model.position.copy(center).multiplyScalar(-s);
-
-	pivot.add(model);
-});
-
-// mouse position from -1 to 1 (top-left is -1, +1)
 const mouse = { x: 0, y: 0 };
 window.addEventListener('pointermove', (e) => {
 	mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
 	mouse.y = (e.clientY / window.innerHeight) * 2 - 1;
 });
 
-function resize() {
-	renderer.setSize(window.innerWidth, window.innerHeight, false);
-	camera.aspect = window.innerWidth / window.innerHeight;
-	camera.updateProjectionMatrix();
-}
-window.addEventListener('resize', resize);
-resize();
+const objLoader = new OBJLoader();
+const gltfLoader = new GLTFLoader();
 
-const maxTurn = 0.9; // how far it turns (radians); raise for a bigger turn
-function animate() {
-	requestAnimationFrame(animate);
-	// ease toward the target so it moves smoothly instead of snapping
-	pivot.rotation.y += (mouse.x * maxTurn - pivot.rotation.y) * 0.08;
-	pivot.rotation.x += (mouse.y * maxTurn - pivot.rotation.x) * 0.08;
-	renderer.render(scene, camera);
+// loads .obj or .gltf/.glb depending on the file name
+function loadModel(url, done) {
+	if (/\.(gltf|glb)$/i.test(url)) {
+		gltfLoader.load(url, (g) => done(g.scene));
+	} else {
+		objLoader.load(url, (obj) => {
+			obj.traverse((c) => {
+				if (c.isMesh) {
+					c.material = new THREE.MeshStandardMaterial({
+						color: OBJ_COLOR,
+						roughness: 0.5,
+						metalness: 0.2,
+						side: THREE.DoubleSide
+					});
+				}
+			});
+			done(obj);
+		});
+	}
 }
-animate();
+
+// one small 3D scene per canvas
+function setupObject(canvas) {
+	const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+	renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+	const scene = new THREE.Scene();
+	const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 1000);
+	scene.add(new THREE.AmbientLight(0xffffff, 1.2));
+	const light = new THREE.DirectionalLight(0xffffff, 2);
+	light.position.set(2, 3, 5);
+	scene.add(light);
+
+	const pivot = new THREE.Group(); // this is what turns toward the mouse
+	scene.add(pivot);
+
+	let size = null;
+
+	// size the canvas and back the camera up until the whole object fits
+	function fit() {
+		const w = canvas.clientWidth, h = canvas.clientHeight;
+		if (!w || !h) return;
+		renderer.setSize(w, h, false);
+		camera.aspect = w / h;
+		camera.updateProjectionMatrix();
+		if (size) {
+			const t = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+			const dist = Math.max(size.y / 2 / t, size.x / 2 / (t * camera.aspect));
+			camera.position.set(0, 0, dist * 1.25 + size.z / 2);
+		}
+	}
+
+	loadModel(canvas.dataset.model, (model) => {
+		// if an object lies on its side or faces away, rotate it here, e.g.:
+		// model.rotation.x = Math.PI / 2;
+		const box = new THREE.Box3().setFromObject(model);
+		size = box.getSize(new THREE.Vector3());
+		model.position.sub(box.getCenter(new THREE.Vector3())); // center it on the pivot
+		pivot.add(model);
+		fit();
+	});
+
+	fit();
+
+	return {
+		fit,
+		update() {
+			pivot.rotation.y += (mouse.x * MAX_TURN - pivot.rotation.y) * EASE;
+			pivot.rotation.x += (mouse.y * MAX_TURN - pivot.rotation.x) * EASE;
+			renderer.render(scene, camera);
+		}
+	};
+}
+
+const items = [...document.querySelectorAll('.obj-link canvas')].map(setupObject);
+window.addEventListener('resize', () => items.forEach((i) => i.fit()));
+
+(function tick() {
+	requestAnimationFrame(tick);
+	items.forEach((i) => i.update());
+})();
 </script>
 </body>
 
