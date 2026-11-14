@@ -30,11 +30,15 @@ html, body {
 
 /* big GIRL EDM title: keeps its own proportions, stuck to the right */
 .title {
+	position: relative;
     top: -2;
 	z-index: 2;
 	flex: none;
-	height: 92dvh;
+	align-self: flex-start;
+	height: 88dvh;
 	width: auto;
+	margin: -3dvh 1vw 0 0; 
+
 }
 
 .left {

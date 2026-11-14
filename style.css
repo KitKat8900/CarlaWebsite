@@ -121,8 +121,8 @@ body{
 	font-variation-settings: "wght" calc(var(--mouse-x) * 800), "SRFF" var(--mouse-y), "slnt" calc(var(--mouse-x) *-10);
 	transition: font-variation-settings 33ms linear; */
 	font-family: Super;
-	/* background-color: rgb(235,250,255); */
-	background-color: var(--bgfade);
+	background-color: rgb(0, 0, 0);
+	/* background-color: var(--bgfade);*/
 	margin: 0;
 }
 
