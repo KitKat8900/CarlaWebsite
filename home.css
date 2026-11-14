@@ -15,53 +15,59 @@ html, body {
 	background: #fff;
 	overflow: hidden;
 }
-body {
-	display: grid;
-	place-items: center;
-}
 
-/* The "stage" keeps the mockup's proportions on any screen.
-   Everything inside is positioned in % of the stage. */
+/* The stage fills the whole window.
+   Left column (.left) takes whatever width the title leaves over. */
 .stage {
-	position: relative;
-	width: min(100vw, calc(100dvh * 733 / 475));
-	aspect-ratio: 733 / 475;
-	container-type: inline-size;   /* lets text scale with the stage (cqw) */
+	position: fixed;
+	inset: 0;
+	display: flex;
 	font-family: 'Squeezed', Impact, 'Arial Narrow', sans-serif;
 	color: #000;
+	/* text follows the smaller of width/height, so it never gets huge or tiny */
+	font-size: min(1.6vw, 2.5vh);
 }
-.stage > * {
+
+/* big GIRL EDM title: keeps its own proportions, stuck to the right */
+.title {
+	position: relative;
+	z-index: 2;
+	flex: none;
+	align-self: flex-start;
+	height: 88dvh;
+	width: auto;
+	margin: 0.5dvh 1vw 0 0;
+}
+
+.left {
+	position: relative;
+	z-index: 1;
+	flex: 1;
+	min-width: 0;
+}
+.left > * {
 	position: absolute;
 	margin: 0;
 }
 
-/* photo / gif, top-left */
+/* photo / gif: stretches across the left column */
 .hero {
-	left: 3.3%;
+	left: 3vw;
 	top: 3.8%;
-	width: 54%;
+	width: calc(100% - 1.5vw);   /* tucks slightly under the title */
 	height: 48.4%;
 	object-fit: cover;
+	object-position: center 35%; /* keep the heads in frame when it gets cropped */
 	z-index: 1;
 }
 
-/* big GIRL EDM title, right side */
-.title {
-	right: 1%;
-	top: 0;
-	width: 43.5%;
-	height: auto;
-	z-index: 2;
-}
-
-/* ascii art, bottom area */
+/* ascii art: stretches to fill, runs a little under the title */
 .ascii {
-	left: 3%;
+	left: 3vw;
 	top: 52.6%;
-	width: 66%;
+	width: 118%;
 	height: 46%;
-	object-fit: contain;
-	object-position: left top;
+	object-fit: fill;            /* use "contain" if you don't want it stretched */
 	z-index: 1;
 }
 
@@ -76,42 +82,40 @@ body {
 	height: 100%;
 	display: block;
 }
-#link-scale    { left: 17.5%; top: 54%;   width: 11.5%; height: 10%; }
-#link-blog     { left: 35%;   top: 65.5%; width: 13%;   height: 10%; }
-#link-timeline { left: 5.2%;  top: 74.5%; width: 13.5%; height: 7.5%; }
+#link-scale    { left: 31.3%; top: 54%;   width: 20.6%; height: 10%; }
+#link-blog     { left: 62.6%; top: 65.5%; width: 23.2%; height: 10%; }
+#link-timeline { left: 9.3%;  top: 74.5%; width: 24.1%; height: 7.5%; }
 
 /* now listening */
-.listen-label,
+.listen {
+	left: 3vw;
+	top: 91.5%;
+	z-index: 3;
+	display: grid;
+	grid-template-columns: auto auto;
+	align-items: baseline;
+	column-gap: 0.9em;
+	white-space: nowrap;
+	line-height: 1.25;
+}
 .listen-song,
 .listen-artist {
-	z-index: 3;
-	white-space: nowrap;
-	line-height: 1;
-}
-.listen-label {
-	left: 3.1%;
-	top: 92.3%;
-	font-size: 1.6cqw;
-}
-.listen-song {
-	left: 15.8%;
-	top: 92.8%;
 	font-family: 'Helv', Arial, sans-serif;
-	font-size: 1.5cqw;
+	font-size: 0.95em;
 }
 .listen-artist {
-	left: 22.5%;
-	top: 96.3%;
-	font-family: 'Helv', Arial, sans-serif;
-	font-size: 1.5cqw;
+	grid-column: 2;
+	margin-left: 4.6em;
 }
 
 /* credits, bottom-right */
 .credit {
-	right: 1.3%;
-	top: 94%;
+	position: absolute;
+	right: 1.3vw;
+	top: 93.5%;
+	margin: 0;
 	z-index: 3;
-	font-size: 0.8cqw;
+	font-size: min(0.8vw, 1.25vh);
 	line-height: 1.3;
 	text-transform: uppercase;
 }

@@ -11,32 +11,36 @@
 <body>
 <div class="stage">
 
-	<!-- photo / gif -->
-	<img class="hero" src="gifs/girl%20edm.gif" alt="">
+	<div class="left">
+		<!-- photo / gif -->
+		<img class="hero" src="gifs/girl%20edm.gif" alt="">
+
+		<!-- ascii art -->
+		<img class="ascii" src="ascii-art%20(3).png" alt="">
+
+		<!-- 3D links: the model path goes in data-model -->
+		<a class="obj-link" id="link-scale" href="scale.html" aria-label="music scale">
+			<canvas data-model="web assets/OBJ/Asset 2.obj"></canvas>
+		</a>
+		<!-- change href="#" to blog.html once that page exists -->
+		<a class="obj-link" id="link-blog" href="#" aria-label="blog and interviews">
+			<canvas data-model="web assets/OBJ/Asset 3.obj"></canvas>
+		</a>
+		<!-- change href="#" to timeline.html once that page exists -->
+		<a class="obj-link" id="link-timeline" href="#" aria-label="timeline">
+			<canvas data-model="web assets/OBJ/Asset 1.obj"></canvas>
+		</a>
+
+		<!-- now listening -->
+		<div class="listen">
+			<span class="listen-label">NOW LISTENING TO:</span>
+			<span class="listen-song">bodyfeeling (title of song)</span>
+			<span class="listen-artist">&#8627; underscores (artist)</span>
+		</div>
+	</div>
 
 	<!-- big title -->
 	<img class="title" src="web%20assets/girl%20edm%20title.svg" alt="GIRL EDM">
-
-	<!-- ascii art -->
-	<img class="ascii" src="ascii-art%20(3).png" alt="">
-
-	<!-- 3D links: the model path goes in data-model -->
-	<a class="obj-link" id="link-scale" href="EdmScale.html" aria-label="music scale">
-		<canvas data-model="web assets/OBJ/Asset 2.obj"></canvas>
-	</a>
-	<!-- change href="#" to blog.html once that page exists -->
-	<a class="obj-link" id="link-blog" href="#" aria-label="blog and interviews">
-		<canvas data-model="web assets/OBJ/Asset 1.obj"></canvas>
-	</a>
-	<!-- change href="#" to timeline.html once that page exists -->
-	<a class="obj-link" id="link-timeline" href="#" aria-label="timeline">
-		<canvas data-model="web assets/OBJ/Asset 3.obj"></canvas>
-	</a>
-
-	<!-- now listening -->
-	<p class="listen-label">NOW LISTENING TO:</p>
-	<p class="listen-song">bodyfeeling (title of song)</p>
-	<p class="listen-artist">&#8627; underscores (artist)</p>
 
 	<!-- credits -->
 	<p class="credit">Website design by Carla Mu&ntilde;oz<br>Coded by Lucas Jaramillo</p>
