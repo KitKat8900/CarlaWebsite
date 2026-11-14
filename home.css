@@ -52,7 +52,7 @@ html, body {
 
 /* photo / gif: stretches across the left column */
 .hero {
-	left: 1vw;                    /* was 3vw */
+	left: -0.2vw;                    /* was 3vw */
 	top: -1%;                    /* was 3.8%, lines up with the title's top */
 	width: calc(100% + 0.5vw);    /* still tucks under the title, no gap */
 	height: 51.7%;                /* its bottom edge stays where it was */
@@ -63,7 +63,7 @@ html, body {
 
 /* ascii art: a box that ends well above the song text */
 .ascii {
-	left: 1vw;
+	left: -0.2vw;
 	top: 52.6%;
 	width: 90%;      /* was 118%: less stretched, so denser */
 	height: 38%;
