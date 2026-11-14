@@ -37,7 +37,6 @@ html, body {
 	align-self: flex-start;
 	height: 88dvh;
 	width: auto;
-	margin: 0.5dvh 1vw 0 0;
 }
 
 .left {
@@ -54,7 +53,7 @@ html, body {
 /* photo / gif: stretches across the left column */
 .hero {
 	left: 1vw;                    /* was 3vw */
-	top: 0.5%;                    /* was 3.8%, lines up with the title's top */
+	top: -1%;                    /* was 3.8%, lines up with the title's top */
 	width: calc(100% + 0.5vw);    /* still tucks under the title, no gap */
 	height: 51.7%;                /* its bottom edge stays where it was */
 	object-fit: cover;
