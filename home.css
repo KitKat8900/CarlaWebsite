@@ -123,13 +123,28 @@ html, body {
 	margin-left: 4.6em;
 }
 
-.listen-controls {
-	grid-column: 1;
-	grid-row: 2;
-	display: flex;
-	align-items: center;
-	gap: 0.7em;
+.play-big {
+	all: unset;
+	position: absolute;
+	left: 50%;
+	top: 27%;
+	transform: translate(-50%, -50%);
+	z-index: 4;
+	cursor: pointer;
+	font-family: 'Squeezed', Impact, 'Arial Narrow', sans-serif;
+	font-size: min(15vw, 26vh);   /* the size: raise it for bigger */
+	line-height: 1;
+	color: #eeeaff;               /* the same lavender as the title */
+	-webkit-text-stroke: 0.03em #000;
+	paint-order: stroke fill;
+	transition: opacity 0.3s;
 }
+.play-big:hover { color: #fff; }
+.play-big.playing { opacity: 0; }          /* fades away while music plays */
+.play-big.playing:hover { opacity: 1; }    /* hover over it to get PAUSE */
+.play-big:focus-visible { outline: 2px solid #000; 
+}
+
 .listen-artist { grid-row: 2; }
 .listen-controls button {
 	all: unset;
