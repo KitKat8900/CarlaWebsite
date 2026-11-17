@@ -107,7 +107,7 @@ html, body {
 	top: 91.5%;
 	z-index: 3;
 	display: grid;
-	grid-template-columns: auto auto;
+	grid-template-columns: auto 20em auto;
 	align-items: baseline;
 	column-gap: 0.9em;
 	white-space: nowrap;
@@ -125,7 +125,7 @@ html, body {
 
 .play-btn {
 	all: unset;
-	grid-column: 1;
+	grid-column: 3;
 	grid-row: 1 / span 2;
 	align-self: center;
 	min-width: 2.3em;          /* keeps the text from shifting when PLAY becomes PAUSE */
@@ -140,10 +140,10 @@ html, body {
 .play-btn:hover { color: #fff; }
 .play-btn:focus-visible { outline: 2px solid #000; }
 
-.listen-label { grid-column: 2; grid-row: 1; }
-.listen-song  { grid-column: 3; grid-row: 1; }
+.listen-label  { grid-column: 1; grid-row: 1; }
+.listen-song   { grid-column: 2; grid-row: 1; }
 
-.listen-artist { grid-row: 2; }
+.listen-artist { grid-column: 2; grid-row: 2; }   /* keep your margin-left line */
 .listen-controls button {
 	all: unset;
 	cursor: pointer;
