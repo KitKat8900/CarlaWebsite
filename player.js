@@ -1,5 +1,8 @@
 // Plays the songs in "lucas playlist" and keeps the "now listening to" line in sync.
 (function () {
+	// small notes shown after the title and artist, like in the mockup; set to '' to hide
+	const LABELS = { title: ' (title of song)', artist: ' (artist)' };
+
 	// file   = folder + song name + .mp3, exactly as it is on disk
 	// title  = what shows on the page (optional: left out, the song name is used)
 	// artist = fill this in for each song (left empty, the artist line stays blank)
@@ -101,8 +104,8 @@
 			i = (n + PLAYLIST.length) % PLAYLIST.length;
 			const t = PLAYLIST[i];
 			audio.src = encodeURI(t.file);
-			titleEl.textContent = t.title || t.file.split('/').pop().replace(/\.mp3$/i, '');
-			if (artistEl) artistEl.textContent = t.artist ? '\u21B3 ' + t.artist : '';
+			titleEl.textContent = (t.title || t.file.split('/').pop().replace(/\.mp3$/i, '')) + LABELS.title;
+			if (artistEl) artistEl.textContent = t.artist ? '\u21B3 ' + t.artist + LABELS.artist : '';
 			if (wantPlay) startPlayback();
 		}
 
