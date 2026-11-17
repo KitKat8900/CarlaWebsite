@@ -59,78 +59,100 @@
 		// add more songs here, same format
 	];
 
-	const titleEl = document.querySelector('.listen-song');
-	const artistEl = document.querySelector('.listen-artist');
-	const playBtn = document.getElementById('play-btn');
+	function init() {
+		const titleEl = document.querySelector('.listen-song');
+		const artistEl = document.querySelector('.listen-artist');
+		const playBtn = document.getElementById('play-btn');
 
-	const PLAY = 'PLAY';
-	const PAUSE = 'PAUSE';
-
-	const audio = new Audio();
-	audio.preload = 'metadata';     // only fetch a song when it is about to play
-
-	let i = 0;                      // index of the current song
-	let wantPlay = false;           // true once the visitor has asked for music
-	let fails = 0;                  // songs in a row that failed to load
-
-	function load(n) {
-		i = (n + PLAYLIST.length) % PLAYLIST.length;
-		const t = PLAYLIST[i];
-		audio.src = encodeURI(t.file);
-		titleEl.textContent = t.title || t.file.split('/').pop().replace(/\.mp3$/i, '');
-		artistEl.textContent = t.artist ? '\u21B3 ' + t.artist : '';
-		if (wantPlay) audio.play().catch(() => {});
-	}
-
-	function toggle() {
-		if (audio.paused) {
-			wantPlay = true;
-			audio.play().catch(() => {});
-		} else {
-			wantPlay = false;
-			audio.pause();
+		// if the page is missing something, say so in the console instead of crashing
+		if (!titleEl || !playBtn) {
+			console.error('player.js: could not find ' + (!titleEl ? '.listen-song' : '#play-btn') + ' in the page');
+			return;
 		}
-	}
 
-	playBtn.addEventListener('click', toggle);
-	audio.addEventListener('play', () => {
-		playBtn.textContent = PAUSE;
-		playBtn.classList.add('playing');   // the big button fades out while music plays
-	});
-	audio.addEventListener('pause', () => {
-		if (wantPlay) return;               // just changing songs, not a real pause
-		playBtn.textContent = PLAY;
-		playBtn.classList.remove('playing');
-	});
-	audio.addEventListener('ended', () => load(i + 1));
-	audio.addEventListener('playing', () => { fails = 0; });
+		const PLAY = 'PLAY';
+		const PAUSE = 'PAUSE';
 
-	// a wrong file name: say which one in the console, and skip to the next song
-	audio.addEventListener('error', () => {
-		console.warn('Could not load:', decodeURI(audio.src));
-		if (wantPlay && ++fails < PLAYLIST.length) load(i + 1);
-	});
+		const audio = new Audio();
+		audio.preload = 'metadata';     // only fetch a song when it is about to play
 
-	// keep the song and position when the visitor leaves for another page and comes back
-	const KEY = 'carla-player';
-	function save() {
+		let i = 0;                      // index of the current song
+		let wantPlay = false;           // true while the visitor wants music
+		let fails = 0;                  // songs in a row that failed to load
+
+		function setUI(playing) {
+			playBtn.textContent = playing ? PAUSE : PLAY;
+			playBtn.classList.toggle('playing', playing);
+		}
+
+		function startPlayback() {
+			audio.play().catch((err) => {
+				if (err && err.name === 'AbortError') return;      // just switched songs
+				if (err && err.name === 'NotAllowedError') {       // browser wants a click first
+					wantPlay = false;
+					setUI(false);
+				} else {
+					console.warn('player.js: play() failed', err);
+				}
+			});
+		}
+
+		function load(n) {
+			i = (n + PLAYLIST.length) % PLAYLIST.length;
+			const t = PLAYLIST[i];
+			audio.src = encodeURI(t.file);
+			titleEl.textContent = t.title || t.file.split('/').pop().replace(/\.mp3$/i, '');
+			if (artistEl) artistEl.textContent = t.artist ? '\u21B3 ' + t.artist : '';
+			if (wantPlay) startPlayback();
+		}
+
+		playBtn.addEventListener('click', () => {
+			if (wantPlay) {
+				wantPlay = false;
+				audio.pause();
+				setUI(false);
+			} else {
+				wantPlay = true;
+				setUI(true);                // switch the button right away
+				startPlayback();
+			}
+		});
+
+		audio.addEventListener('ended', () => load(i + 1));
+		audio.addEventListener('playing', () => { fails = 0; });
+
+		// a wrong file name: say which one in the console, and skip to the next song
+		audio.addEventListener('error', () => {
+			console.warn('player.js: could not load', decodeURI(audio.src));
+			if (wantPlay && ++fails < PLAYLIST.length) load(i + 1);
+		});
+
+		// keep the song and position when the visitor leaves for another page and comes back
+		const KEY = 'carla-player';
+		function save() {
+			try {
+				sessionStorage.setItem(KEY, JSON.stringify({ i: i, time: audio.currentTime, playing: wantPlay }));
+			} catch (e) {}
+		}
+		setInterval(save, 1000);
+		window.addEventListener('pagehide', save);
+
+		let start = 0, startTime = 0, resume = false;
 		try {
-			sessionStorage.setItem(KEY, JSON.stringify({ i: i, time: audio.currentTime, playing: !audio.paused }));
+			const s = JSON.parse(sessionStorage.getItem(KEY));
+			if (s && PLAYLIST[s.i]) { start = s.i; startTime = s.time || 0; resume = !!s.playing; }
 		} catch (e) {}
-	}
-	setInterval(save, 1000);
-	window.addEventListener('pagehide', save);
 
-	let start = 0, startTime = 0, resume = false;
-	try {
-		const s = JSON.parse(sessionStorage.getItem(KEY));
-		if (s && PLAYLIST[s.i]) { start = s.i; startTime = s.time || 0; resume = !!s.playing; }
-	} catch (e) {}
-
-	playBtn.textContent = PLAY;
-	if (startTime) {
-		audio.addEventListener('loadedmetadata', () => { audio.currentTime = startTime; }, { once: true });
+		if (startTime) {
+			audio.addEventListener('loadedmetadata', () => { audio.currentTime = startTime; }, { once: true });
+		}
+		wantPlay = resume;              // browsers may still block this until the first click
+		setUI(resume);
+		load(start);
+		console.log('player.js: ready, ' + PLAYLIST.length + ' songs');
 	}
-	wantPlay = resume;              // browsers may still block this until the first click
-	load(start);
+
+	// works wherever the script tag is placed
+	if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+	else init();
 })();
