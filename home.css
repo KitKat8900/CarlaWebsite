@@ -102,47 +102,23 @@ html, body {
 #link-timeline { left: 1.4%;  top: 53.2%; width: 32.4%; height: 20%;   }
 
 /* now listening */
+/* now listening */
 .listen {
-	left: 1vw;
-	top: 91.5%;
+	left: var(--edge, 1vw);
+	top: var(--bottom-row, 91.5%);
 	z-index: 3;
 	display: grid;
 	grid-template-columns: auto auto auto;
-	align-items: baseline;
 	column-gap: 0.9em;
+	align-items: baseline;
 	white-space: nowrap;
 	line-height: 1.25;
 }
-.listen-song,
-.listen-artist {
-	font-family: 'Helv', Arial, sans-serif;
-	font-size: 0.95em;
-}
-.listen-artist {
-	grid-column: 2;
-	margin-left: 4.6em;
-}
-
-.play-btn {
-	all: unset;
-	align-self: center;
-	min-width: 2.3em;          /* keeps the text from shifting when PLAY becomes PAUSE */
-	cursor: pointer;
-	font-family: 'Squeezed', Impact, 'Arial Narrow', sans-serif;
-	font-size: 2.4em;          /* the size: lower for smaller */
-	line-height: 1;
-	color: #000000;
-	-webkit-text-stroke: 0.03em #5e0045b3;
-	paint-order: stroke fill;
-}
-.play-btn:hover { opacity: 0.5; }
-.play-btn:focus-visible { outline: 2px solid #000; }
-
 .listen-label  { grid-column: 1; grid-row: 1; }
-.listen-song   { grid-column: 2; grid-row: 1; }
+.listen-song   { grid-column: 2; grid-row: 1; font-family: 'Helv', Arial, sans-serif; font-size: 0.95em; }
+.listen-artist { grid-column: 2; grid-row: 2; margin-left: 4.6em; font-family: 'Helv', Arial, sans-serif; font-size: 0.95em; }
 
-.listen-artist { grid-column: 2; grid-row: 2; }   /* keep your margin-left line */
-
+/* play and arrows */
 .listen-controls {
 	grid-column: 3;
 	grid-row: 1 / span 2;
@@ -151,23 +127,30 @@ html, body {
 	align-items: center;
 	gap: 0.5em;
 }
-#prev-btn,
-#next-btn {
+.listen-controls button {
 	all: unset;
 	cursor: pointer;
 	color: #000;
 }
-#prev-btn svg,
-#next-btn svg {
+.listen-controls button:hover { opacity: 0.5; }
+.listen-controls button:focus-visible { outline: 2px solid #000; }
+
+.listen-controls .play-btn {
+	min-width: 2.3em;
+	font-family: 'Squeezed', Impact, 'Arial Narrow', sans-serif;
+	font-size: 2.4em;
+	line-height: 1;
+}
+.listen-controls svg {
 	display: block;
-	height: 1.5em;          /* icon size: raise for bigger */
+	height: 1.5em;
 	width: auto;
 	fill: currentColor;
 	stroke: currentColor;
-	stroke-width: 40;       /* this rounds the corners */
+	stroke-width: 40;
 	stroke-linejoin: round;
 }
-#prev-btn svg { transform: scaleX(-1); }   /* flips it to point backward */
+#prev-btn svg { transform: scaleX(-1); } /* flips it to point backward */
 #next-btn:hover { opacity: 0.5; }
 #prev-btn:focus-visible,
 #next-btn:focus-visible { outline: 2px solid #000; }
