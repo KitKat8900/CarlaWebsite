@@ -66,6 +66,8 @@
 		const titleEl = document.querySelector('.listen-song');
 		const artistEl = document.querySelector('.listen-artist');
 		const playBtn = document.getElementById('play-btn');
+		const prevBtn = document.getElementById('prev-btn');   // optional
+		const nextBtn = document.getElementById('next-btn');   // optional
 
 		// if the page is missing something, say so in the console instead of crashing
 		if (!titleEl || !playBtn) {
@@ -119,6 +121,20 @@
 				setUI(true);                // switch the button right away
 				startPlayback();
 			}
+		});
+
+		// jump to a song and start playing it
+		function goTo(n) {
+			wantPlay = true;
+			setUI(true);
+			load(n);
+		}
+
+		if (nextBtn) nextBtn.addEventListener('click', () => goTo(i + 1));
+		if (prevBtn) prevBtn.addEventListener('click', () => {
+			// past the first 3 seconds, the back arrow restarts the song; otherwise it goes back one
+			if (audio.currentTime > 3) audio.currentTime = 0;
+			else goTo(i - 1);
 		});
 
 		audio.addEventListener('ended', () => load(i + 1));

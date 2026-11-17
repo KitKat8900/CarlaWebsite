@@ -125,8 +125,6 @@ html, body {
 
 .play-btn {
 	all: unset;
-	grid-column: 3;
-	grid-row: 1 / span 2;
 	align-self: center;
 	min-width: 2.3em;          /* keeps the text from shifting when PLAY becomes PAUSE */
 	cursor: pointer;
@@ -144,14 +142,35 @@ html, body {
 .listen-song   { grid-column: 2; grid-row: 1; }
 
 .listen-artist { grid-column: 2; grid-row: 2; }   /* keep your margin-left line */
-.listen-controls button {
+
+.listen-controls {
+	grid-column: 3;
+	grid-row: 1 / span 2;
+	align-self: center;
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+#prev-btn,
+#next-btn {
 	all: unset;
 	cursor: pointer;
-	font: inherit;
-	line-height: 1;
+	color: #000;
 }
-.listen-controls button:hover { opacity: 0.5; }
-.listen-controls button:focus-visible { outline: 1px solid #000; }
+#prev-btn svg,
+#next-btn svg {
+	display: block;
+	height: 1.5em;          /* icon size: raise for bigger */
+	width: auto;
+	fill: currentColor;
+	stroke: currentColor;
+	stroke-width: 40;       /* this rounds the corners */
+	stroke-linejoin: round;
+}
+#prev-btn svg { transform: scaleX(-1); }   /* flips it to point backward */
+#next-btn:hover { opacity: 0.5; }
+#prev-btn:focus-visible,
+#next-btn:focus-visible { outline: 2px solid #000; }
 
 /* credits, bottom-right */
 .credit {
