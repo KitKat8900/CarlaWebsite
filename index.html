@@ -39,6 +39,11 @@
 			<span class="listen-label">NOW LISTENING TO:</span>
 			<span class="listen-song">bodyfeeling (title of song)</span>
 			<span class="listen-artist">&#8627; underscores (artist)</span>
+			<span class="listen-controls">
+			<button id="prev-btn" type="button" aria-label="previous song">PREV</button>
+			<button id="play-btn" type="button" aria-label="play or pause">&#9654;&#xFE0E;</button>
+			<button id="next-btn" type="button" aria-label="next song">NEXT</button>
+			</span>
 		</div>
 	</div>
 
@@ -188,6 +193,7 @@ window.addEventListener('resize', () => items.forEach((i) => i.fit()));
 	items.forEach((i) => i.update());
 })();
 </script>
+<script src="player.js"></script>
 </body>
 
 </html>

@@ -123,6 +123,23 @@ html, body {
 	margin-left: 4.6em;
 }
 
+.listen-controls {
+	grid-column: 1;
+	grid-row: 2;
+	display: flex;
+	align-items: center;
+	gap: 0.7em;
+}
+.listen-artist { grid-row: 2; }
+.listen-controls button {
+	all: unset;
+	cursor: pointer;
+	font: inherit;
+	line-height: 1;
+}
+.listen-controls button:hover { opacity: 0.5; }
+.listen-controls button:focus-visible { outline: 1px solid #000; }
+
 /* credits, bottom-right */
 .credit {
 	position: absolute;
