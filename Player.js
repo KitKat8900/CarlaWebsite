@@ -1,75 +1,70 @@
 // Plays the songs in "lucas playlist" and keeps the "now listening to" line in sync.
 (function () {
-	const FOLDER = 'lucas playlist/';   // folder with the mp3 files (next to index.html)
-	const EXT = '.mp3';
-
-	// file   = the file name WITHOUT .mp3, exactly as it is in the folder
-	// title  = what shows on the page (optional: left out, the file name is used)
+	// file   = folder + song name + .mp3, exactly as it is on disk
+	// title  = what shows on the page (optional: left out, the song name is used)
 	// artist = fill this in for each song (left empty, the artist line stays blank)
 	const PLAYLIST = [
-		{ file: 'Bodyfeeling', artist: 'underscores' },
-		{ file: 'How to Teleport (leroy Remix)', artist: 'underscores' },
-		{ file: 'Music', artist: '' },
-		{ file: 'That Boy_s Not Nice', title: 'That Boy\u2019s Not Nice', artist: '' },
-		{ file: 'IT_S NOT LIKE THAT ANYMORE', title: 'IT\u2019S NOT LIKE THAT ANYMORE', artist: '' },
-		{ file: 'Music Baby', artist: '' },
-		{ file: 'only the best', artist: '' },
-		{ file: 'Seventh heaven', artist: '' },
-		{ file: 'Creep', artist: '' },
-		{ file: 'Lovefield', artist: '' },
-		{ file: 'P\u00FCr Love', artist: '' },
-		{ file: 'Tell Me (U Want It)', artist: '' },
-		{ file: 'All Or Nothing', artist: '' },
-		{ file: 'Do It', artist: '' },
+		{ file: 'lucas playlist/Bodyfeeling.mp3', artist: 'underscores' },
+		{ file: 'lucas playlist/How to Teleport (leroy Remix).mp3', artist: '' },
+		{ file: 'lucas playlist/Music.mp3', artist: '' },
+		{ file: 'lucas playlist/That Boy_s Not Nice.mp3', title: 'That Boy\u2019s Not Nice', artist: '' },
+		{ file: 'lucas playlist/IT_S NOT LIKE THAT ANYMORE.mp3', title: 'IT\u2019S NOT LIKE THAT ANYMORE', artist: '' },
+		{ file: 'lucas playlist/Music Baby.mp3', artist: '' },
+		{ file: 'lucas playlist/only the best.mp3', artist: '' },
+		{ file: 'lucas playlist/Seventh heaven.mp3', artist: '' },
+		{ file: 'lucas playlist/Creep.mp3', artist: '' },
+		{ file: 'lucas playlist/Lovefield.mp3', artist: '' },
+		{ file: 'lucas playlist/P\u00FCr Love.mp3', artist: '' },
+		{ file: 'lucas playlist/Tell Me (U Want It).mp3', artist: '' },
+		{ file: 'lucas playlist/All Or Nothing.mp3', artist: '' },
+		{ file: 'lucas playlist/Do It.mp3', artist: '' },
 
-		{ file: 'Sister', artist: '' },
-		{ file: 'So What_', title: 'So What?', artist: '' },
-		{ file: 'FIANCHI', artist: '' },
-		{ file: 'PQC', artist: '' },
-		{ file: 'WannaCry', artist: '' },
-		{ file: 'Fuck My Computer', artist: '' },
-		{ file: 'iPod Touch', artist: '' },
-		{ file: 'Wayside', artist: '' },
-		{ file: 'Ice u out', artist: '' },
-		{ file: 'Light Leak', artist: '' },
-		{ file: 'Love Love (Love Love)', artist: '' },
-		{ file: 'Ninacamina', artist: '' },
-		{ file: 'Dream Sequence', artist: '' },
-		{ file: 'girl EDM', artist: '' },
+		{ file: 'lucas playlist/Sister.mp3', artist: '' },
+		{ file: 'lucas playlist/So What_.mp3', title: 'So What?', artist: '' },
+		{ file: 'lucas playlist/FIANCHI.mp3', artist: '' },
+		{ file: 'lucas playlist/PQC.mp3', artist: '' },
+		{ file: 'lucas playlist/WannaCry.mp3', artist: '' },
+		{ file: 'lucas playlist/Fuck My Computer.mp3', artist: '' },
+		{ file: 'lucas playlist/iPod Touch.mp3', artist: '' },
+		{ file: 'lucas playlist/Wayside.mp3', artist: '' },
+		{ file: 'lucas playlist/Ice u out.mp3', artist: '' },
+		{ file: 'lucas playlist/Light Leak.mp3', artist: '' },
+		{ file: 'lucas playlist/Love Love (Love Love).mp3', artist: '' },
+		{ file: 'lucas playlist/Ninacamina.mp3', artist: '' },
+		{ file: 'lucas playlist/Dream Sequence.mp3', artist: '' },
+		{ file: 'lucas playlist/girl EDM.mp3', artist: '' },
 
-		{ file: 'Hand on my heart', artist: '' },
-		{ file: '1x1', artist: '' },
-		{ file: 'Stupid (Can\u2019t run from the urge)', artist: '' },
-		{ file: 'Delete', artist: '' },
-		{ file: 'Flash in the Pan', artist: '' },
-		{ file: 'Unlimited Love', artist: '' },
-		{ file: 'Angel Music', artist: '' },
-		{ file: 'DOIT4ME', artist: '' },
-		{ file: 'Kota on the plane', artist: '' },
-		{ file: 'PRETTY4U', artist: '' },
-		{ file: 'The Peace', artist: '' },
-		{ file: 'Afterlife', artist: '' },
-		{ file: 'COPYCAT', artist: '' },
-		{ file: 'Deadtome', artist: '' },
+		{ file: 'lucas playlist/Hand on my heart.mp3', artist: '' },
+		{ file: 'lucas playlist/1x1.mp3', artist: '' },
+		{ file: 'lucas playlist/Stupid (Can\u2019t run from the urge).mp3', artist: '' },
+		{ file: 'lucas playlist/Delete.mp3', artist: '' },
+		{ file: 'lucas playlist/Flash in the Pan.mp3', artist: '' },
+		{ file: 'lucas playlist/Unlimited Love.mp3', artist: '' },
+		{ file: 'lucas playlist/Angel Music.mp3', artist: '' },
+		{ file: 'lucas playlist/DOIT4ME.mp3', artist: '' },
+		{ file: 'lucas playlist/Kota on the plane.mp3', artist: '' },
+		{ file: 'lucas playlist/PRETTY4U.mp3', artist: '' },
+		{ file: 'lucas playlist/The Peace.mp3', artist: '' },
+		{ file: 'lucas playlist/Afterlife.mp3', artist: '' },
+		{ file: 'lucas playlist/COPYCAT.mp3', artist: '' },
+		{ file: 'lucas playlist/Deadtome.mp3', artist: '' },
 
-		{ file: 'Heels broke = died', artist: '' },
-		{ file: 'MAKE IT RIGHT', artist: '' },
-		{ file: 'Undo U', artist: '' },
-		{ file: 'CSIRAC', artist: '' },
-		{ file: 'I RUN MY HANDS THRU IT', artist: '' },
-		{ file: 'London Song', artist: '' },
-		{ file: 'Until 4EVER', artist: '' }
+		{ file: 'lucas playlist/Heels broke = died.mp3', artist: '' },
+		{ file: 'lucas playlist/MAKE IT RIGHT.mp3', artist: '' },
+		{ file: 'lucas playlist/Undo U.mp3', artist: '' },
+		{ file: 'lucas playlist/CSIRAC.mp3', artist: '' },
+		{ file: 'lucas playlist/I RUN MY HANDS THRU IT.mp3', artist: '' },
+		{ file: 'lucas playlist/London Song.mp3', artist: '' },
+		{ file: 'lucas playlist/Until 4EVER.mp3', artist: '' }
 		// add more songs here, same format
 	];
 
 	const titleEl = document.querySelector('.listen-song');
 	const artistEl = document.querySelector('.listen-artist');
 	const playBtn = document.getElementById('play-btn');
-	const prevBtn = document.getElementById('prev-btn');
-	const nextBtn = document.getElementById('next-btn');
 
-	const PLAY = '\u25B6\uFE0E';    // play triangle
-	const PAUSE = '\u275A\u275A';   // pause bars
+	const PLAY = 'PLAY';
+	const PAUSE = 'PAUSE';
 
 	const audio = new Audio();
 	audio.preload = 'metadata';     // only fetch a song when it is about to play
@@ -81,8 +76,8 @@
 	function load(n) {
 		i = (n + PLAYLIST.length) % PLAYLIST.length;
 		const t = PLAYLIST[i];
-		audio.src = encodeURI(FOLDER + t.file + EXT);
-		titleEl.textContent = t.title || t.file;
+		audio.src = encodeURI(t.file);
+		titleEl.textContent = t.title || t.file.split('/').pop().replace(/\.mp3$/i, '');
 		artistEl.textContent = t.artist ? '\u21B3 ' + t.artist : '';
 		if (wantPlay) audio.play().catch(() => {});
 	}
@@ -98,15 +93,15 @@
 	}
 
 	playBtn.addEventListener('click', toggle);
-	nextBtn.addEventListener('click', () => { wantPlay = true; load(i + 1); });
-	prevBtn.addEventListener('click', () => {
-		// past the first 3 seconds, "prev" restarts the song; otherwise it goes back one
-		if (audio.currentTime > 3) audio.currentTime = 0;
-		else { wantPlay = true; load(i - 1); }
+	audio.addEventListener('play', () => {
+		playBtn.textContent = PAUSE;
+		playBtn.classList.add('playing');   // the big button fades out while music plays
 	});
-
-	audio.addEventListener('play', () => { playBtn.innerHTML = PAUSE; });
-	audio.addEventListener('pause', () => { playBtn.innerHTML = PLAY; });
+	audio.addEventListener('pause', () => {
+		if (wantPlay) return;               // just changing songs, not a real pause
+		playBtn.textContent = PLAY;
+		playBtn.classList.remove('playing');
+	});
 	audio.addEventListener('ended', () => load(i + 1));
 	audio.addEventListener('playing', () => { fails = 0; });
 
@@ -132,7 +127,7 @@
 		if (s && PLAYLIST[s.i]) { start = s.i; startTime = s.time || 0; resume = !!s.playing; }
 	} catch (e) {}
 
-	playBtn.innerHTML = PLAY;
+	playBtn.textContent = PLAY;
 	if (startTime) {
 		audio.addEventListener('loadedmetadata', () => { audio.currentTime = startTime; }, { once: true });
 	}
